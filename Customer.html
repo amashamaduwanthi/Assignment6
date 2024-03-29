@@ -14,7 +14,7 @@
             font-weight: bolder;
         }
         #s1{
-            top: 120px;
+            top: 200px;
             height: 200px;
             width: 500px;
             position: absolute;
@@ -39,8 +39,15 @@
             border-radius: 15px;
         }
         #s2{
-            top: 120px;
+            left: 10px;
             height: 200px;
+            width: 800px;
+            position: absolute;
+            margin: auto;
+        }
+        #s5{
+            top: 120px;
+            height: 400px;
             width: 800px;
             right: 10px;
             position: absolute;
@@ -79,14 +86,14 @@
     </style>
 </head>
 <body>
-<h1 class="display-2" id="h1">Customer</h1>
-<button type="button" class="btn btn-info" id="b1" onclick="window.location='DashBoard.html'">Back</button>
+<h1 class="display-2" id="h1">Customer Manage</h1>
+<button type="button" class="btn btn-info" id="b1" onclick="window.location='Home.html'">Back</button>
 <hr class="border border-primary border-3 opacity-75">
 
 <section id="s1">
     <button type="button" class="btn btn-danger" >Delete</button>
-    <button type="button" class="btn btn-warning">Update</button>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">ADD</button>
+    <button type="button" class="btn btn-warning">Clear</button>
+
 
     <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -98,7 +105,7 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="Nic" class="form-label">NIC No</label>
+                            <label for="Nic" class="form-label">Id</label>
                             <input type="text" class="form-control" id="Nic" aria-describedby="emailHelp">
 
                             <label for="Name" class="form-label">Name</label>
@@ -109,9 +116,6 @@
 
                             <label for="Tel" class="form-label">Tel</label>
                             <input type="tel" class="form-control" id="Tel" aria-describedby="emailHelp">
-
-                            <label for="Date" class="form-label">Registration Date</label>
-                            <input type="date" class="form-control" id="Date" aria-describedby="emailHelp">
 
                         </div>
 
@@ -130,7 +134,7 @@
     <!----------------------------------------------------------------------------------------->
 </section>
 <section id="s2">
-    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter the NIC No" >
+    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Search Customer Name Here" >
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
@@ -143,7 +147,7 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="Nic1" class="form-label">NIC No</label>
+                            <label for="Nic1" class="form-label">Id</label>
                             <input type="text" class="form-control" id="Nic1" aria-describedby="emailHelp">
 
                             <label for="Name1" class="form-label">Name</label>
@@ -155,8 +159,7 @@
                             <label for="Tel1" class="form-label">Tel</label>
                             <input type="tel" class="form-control" id="Tel1" aria-describedby="emailHelp">
 
-                            <label for="Date1" class="form-label">Registration Date</label>
-                            <input type="date" class="form-control" id="Date1" aria-describedby="emailHelp">
+
 
                         </div>
 
@@ -172,6 +175,10 @@
             </div>
         </div>
     </div>
+
+</section>
+<section id="s5">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">New Customer</button>
 
 </section>
 <section id="s3">
