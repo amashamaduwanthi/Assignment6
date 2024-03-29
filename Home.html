@@ -4,175 +4,70 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="Assests/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assests/fontawesome-free-6.5.1-web/css/all.min.css">
     <style>
         body{
-            overflow: hidden;
-            border: solid 5px black;
+
         }
-       .navigation{
-           width: 100vw;
+        #d2{
+            width: 1000px;
+            height:1000px;
+            background-image: url("Assests/png-clipart-family-taking-their-groceries-shopping-cart-supermarket-customer-shopping-people-food-vehicle-thumbnail.png");
 
-           position: fixed;
-           z-index: 1;
-           background: white;
-       }
-       div>h1{
-           text-shadow: 5px 2px black;
-           font-size: 100px;
-           left: 50px;
-           font-family: sans-serif;
+            background-position: center;
+            background-size: cover;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            right: 100px;
+            margin:auto;
+        }
+        #h1{
+            font-weight: bolder;
+            top:20px;
+            position: absolute;
+            margin: auto;
+        }
+        #s1{
+            width: 500px;
+            height:650px;
 
-       }
-       #div2>h1{
-           text-shadow: 5px 2px black;
-           font-size: 50px;
-           left: 50px;
-           font-family: sans-serif;
-           color: #56C7AC;
+            top: 50px;
+            bottom: 0;
+            position: absolute;
+            left: 0;
+            margin:auto;
 
-       }
-       h2{
-
-           top: 100px;
-           bottom: 0;
-           position: absolute;
-           right: 200px;
-           margin:auto;
-           font-size: 50px;
-           color: #56C7AC;
-
-       }
-       #home_main {
-           height: 100vh;
-
-       }
-
-       .home {
-           height: 100vh;
-           width: 100vw;
-           /*background:lightsteelblue;*/
-           padding: 0 13.33vw 0 13.33vw;
-           display: flex;
-           flex-direction: row;
-       }
-
-       #left_side {
-
-           width: 50%;
-           height: 100%;
-           bottom: 1000px;
-           /*  background: lightpink;*/
-           display: flex;
-           flex-direction: column;
-           align-content: center;
-           align-items: center;
-           justify-content: space-around;
-
-       }
-
-       #right_side {
-           width: 50%;
-           height: 100%;
-           /*  background: lightpink;*/
-           /*border: 2px solid black;*/
-           display: flex;
-           align-items: center;
-
-
-           /*border: 2px solid red;*/
-
-       }
-
-       #customer_btn, #order_btn, #item_btn {
-           background: linear-gradient(to bottom, #fe8b00 0%, #febe00 100%);
-           width: 70%;
-           height: 20%;
-           border-radius: 10px;
-           text-align: left;
-           box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-           color: black;
-           font-size: 30px;
-           font-weight: bold;
-
-       }
-
-       #customer_btn:hover {
-           background: linear-gradient(to bottom, #fe8b00 0%, #ffffff 100%);
-
-       }
-
-       #item_btn:hover {
-           background: linear-gradient(to bottom, #fe8b00 0%, #ffffff 100%);
-
-       }
-
-       #order_btn:hover {
-           background: linear-gradient(to bottom, #fe8b00 0%, #ffffff 100%);
-       }
-
-
+        }
+        #s1>#d1>button{
+            height: 150px;
+            width: 400px;
+            font-weight: bolder;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
-<section class="navigation">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div id="nav_list" class="navbar-nav">
-
-                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    <a class="nav-link" href="#customer">Customer</a>
-                    <a class="nav-link" href="#item">Item</a>
-                    <a class="nav-link" href="#order">Orders</a>
-
-                </div>
-            </div>
+<h1 class="display-2" id="h1">DashBoard</h1>
+<section>
+    <section id="s1">
+        <div id="d1">
+            <button type="button" class="btn btn-primary" id="b1" onclick="window.location='Customer.html'">Customer</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" id="b2" onclick="window.location='item.html'">Item</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" id="b3">Place Order</button>
         </div>
-    </nav>
+    </section>
 
-
-</section>
-<section><br><br>
-   <div>
-       <h1>Amasha Grocery</h1>
-
-   </div>
-    <h2>Date :  Time :</h2>
-    <div id="div2">
-        <h1>Dashboard</h1>
-
+    <div id="d2">
     </div>
 
-
-
-
 </section>
-<section id="home_main">
-    <section id="home" class="home">
-        <section id="right_side">
-            <div>
-                <img src="Assests/png-clipart-family-taking-their-groceries-shopping-cart-supermarket-customer-shopping-people-food-vehicle-thumbnail.png" alt="" width="450" height="550">
-            </div>
-        </section>
-
-        <section id="left_side">
-            <button id="customer_btn" class="btn btn-primary" type="button">Customers<i class="fa-solid fa-users fa-lg"
-                                                                                        style="color: #000000;"></i>
-            </button>
-
-            <button id="item_btn" class="btn btn-primary" type="button">Items<i class="fa-solid fa-boxes-stacked fa-lg"
-                                                                                style="color: #000000;"></i></button>
-
-            <button id="order_btn" class="btn btn-primary" type="button">Orders<i
-                    class="fa-solid fa-cart-shopping fa-lg" style="color: #000000;"></i></button>
-        </section>
-
-    </section>
-</section>
+<script src="Assests/fontawesome-free-6.5.1-web/js/all.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
