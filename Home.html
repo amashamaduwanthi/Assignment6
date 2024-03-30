@@ -11,23 +11,27 @@
 
         }
         #d2{
-            width: 1000px;
-            height:1000px;
-            background-image: url("Assests/png-clipart-family-taking-their-groceries-shopping-cart-supermarket-customer-shopping-people-food-vehicle-thumbnail.png");
+            width: 740px;
+            height:800px;
+            background-image: url("Assests/9-95016_setup-online-store-hd-png-download.png");
+            border-radius: 45px;
 
             background-position: center;
             background-size: cover;
+            background-repeat: no-repeat;
             top: 0;
             bottom: 0;
             position: absolute;
             right: 100px;
             margin:auto;
         }
-        #h1{
-            font-weight: bolder;
-            top:20px;
+        #h3{
+            font-weight: bold;
+            top:100px;
             position: absolute;
             margin: auto;
+            color: #56C7AC;
+            text-shadow: 5px 2px black;
         }
         #s1{
             width: 500px;
@@ -46,12 +50,46 @@
             font-weight: bolder;
             font-size: 30px;
         }
+        #s2>div>#h4{
+            top: 10px;
+            right:590px;
+            position: absolute;
+            margin: auto;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #s2>div>#h5{
+            top: 10px;
+            right:240px;
+            position: absolute;
+            margin: auto;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #h1{
+            font-weight: bold;
+            text-shadow: 5px 2px black;
+        }
+       #d3{
+           height: 60px;
+           width: 150px;
+          bottom: 100px;
+           left: 50px;
+           position: absolute;
+           margin: auto;
+       }
+       #d3>button{
+           height: 60px;
+           width: 150px;
+           background-color: #56C7AC;
+           font-weight: bold;
+       }
     </style>
 </head>
 <body>
-<h1 class="display-2" id="h1">DashBoard</h1>
-<section>
-    <section id="s1">
+<h1 class="display-2" id="h1">Amasha Grocery</h1>
+<h3 class="display-2" id="h3">DashBoard</h3>
+<section id="s1">
         <div id="d1">
             <button type="button" class="btn btn-primary" id="b1" onclick="window.location='Customer.html'">Customer</button>
             <br>
@@ -62,11 +100,22 @@
             <button type="button" class="btn btn-primary" id="b3">Place Order</button>
         </div>
     </section>
+<section id="s2">
+    <div>
+        <h4 class="display-2" id="h4">  Time-10:50 P.M</h4>
+        <h4 class="display-2" id="h5">  Date-2024-01-14</h4>
 
-    <div id="d2">
+
     </div>
 
 </section>
+
+    <div id="d2">
+    </div>
+<div id="d3">
+    <button type="button" class="btn btn-primary" id="b4">Log Out</button>
+</div>
+
 <script src="Assests/fontawesome-free-6.5.1-web/js/all.min.js">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
