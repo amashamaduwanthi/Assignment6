@@ -12,9 +12,15 @@
     }
     #h1{
       font-weight: bolder;
+      text-shadow: 5px 2px black;
+    }
+    #h2{
+      color: #56C7AC;
+      font-size: 50px;
+      text-shadow: 5px 2px black;
     }
     #s1{
-      top: 200px;
+      top: 296px;
       height: 200px;
       width: 500px;
       position: absolute;
@@ -56,21 +62,24 @@
     #s2>button{
       height: 60px;
       width: 150px;
-      right: 20px;
+      right: 265px;
       position: absolute;
       margin: auto;
       font-size: 30px;
       font-weight: bolder;
       border-radius: 15px;
+      background-color: #56C7AC;
+      color: black;
     }
     #s2>input{
       width: 300px;
-      right: 200px;
+      right: 477px;
       height: 60px;
       position: absolute;
       margin: auto;
       font-weight: bold;
       border-radius: 15px;
+      border: solid 5px black;
     }
     #b1{
       height: 60px;
@@ -82,13 +91,31 @@
       position: absolute;
       margin: auto;
       border-radius: 15px;
+
+    }
+    #s5{
+
+      right: 350px;
+      top: 182px;
+      position: absolute;
+      margin: auto;
+
+
+    }
+    #s5>button{
+      height: 50px;
+      width: 150px;
+      background-color: #56C7AC;
+      color: black;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-<h1 class="display-2" id="h1">Item Manage</h1>
+<h1 class="display-2" id="h1">Amasha Grocery</h1>
+<h2 class="display-2" id="h2">Item Manage</h2>
 <button type="button" class="btn btn-info" id="b1" onclick="window.location='Home.html'">Back</button>
-<hr class="border border-primary border-3 opacity-75">
+<!--<hr class="border border-primary border-3 opacity-75">-->
 
 <section id="s1">
   <button type="button" class="btn btn-danger" >Delete</button>
@@ -99,7 +126,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">New Customer</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">New Item</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -141,7 +168,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel1">Customer Details</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel1">Item </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -194,39 +221,39 @@
     </thead>
     <tbody>
     <tr>
-      <th scope="row">C001</th>
-      <td>Amasha</td>
-      <td>Ambalangoda</td>
-      <td>070123456</td>
+      <th scope="row">I001</th>
+      <td>Cake</td>
+      <td>500.00</td>
+      <td>1000</td>
 
 
     </tr>
     <tr>
-      <th scope="row">C002</th>
-      <td>Lalith</td>
-      <td>Panadura</td>
-      <td>0786756789</td>
+      <th scope="row">I002</th>
+      <td>Chocolate</td>
+      <td>180.00</td>
+      <td>1000</td>
 
     </tr>
     <tr>
-      <th scope="row">C003</th>
-      <td >Chamara</td>
-      <td>colombo</td>
-      <td>0735679987</td>
+      <th scope="row">I003</th>
+      <td >Milk</td>
+      <td>700.00</td>
+      <td>500</td>
 
     </tr>
     <tr>
-      <th scope="row">C004</th>
+      <th scope="row">I004</th>
       <td >Malith</td>
-      <td>colombo</td>
-      <td>0765678987</td>
+      <td>300.00</td>
+      <td>5</td>
 
     </tr>
     <tr>
-      <th scope="row">C005</th>
+      <th scope="row">I005</th>
       <td >Sanduni</td>
-      <td>colombo</td>
-      <td>076565555</td>
+      <td>60..00</td>
+      <td>07</td>
 
     </tr>
 
