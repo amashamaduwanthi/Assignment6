@@ -30,7 +30,7 @@
         #s1{
             width: 500px;
             height: 400px;
-            top: 200px;
+            top: 250px;
             left:100px;
             position: absolute;
             margin: auto;
@@ -48,7 +48,7 @@
         #s2{
             width: 500px;
             height: 400px;
-            top: 300px;
+            top: 350px;
             left:100px;
             position: absolute;
             margin: auto;
@@ -114,10 +114,23 @@
             font-weight: bolder;
             font-size: 18px;
             border-radius: 25px;
+            background-color: #56C7AC;
         }
         #h1{
             font-weight: bold;
             text-shadow: 5px 2px black;
+        }
+        #h3{
+            color: #56C7AC;
+            position: absolute;
+            left: 50px;
+            margin: auto;
+        }
+        #h4{
+            position: absolute;
+            top: 920px;
+            left: 50px;
+            margin: auto;
         }
 
 
@@ -127,6 +140,8 @@
 <body>
 <h1 class="display-2" id="h1">Amasha Grocery</h1>
 <h2 class="display-2" id="h2">Place Order</h2>
+<h3 id="h3"> Order Id :O001</h3>
+<h3 id="h4">New Total :</h3>
 <button type="button" class="btn btn-info" id="b1" onclick="window.location='Home.html'">Back</button>
 
 <section id="s1">
@@ -136,12 +151,12 @@
             <span class="visually-hidden">Toggle Dropdown</span>
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">1990567898</a></li>
-            <li><a class="dropdown-item" href="#">19989878654</a></li>
-            <li><a class="dropdown-item" href="#">19989878654</a></li>
-            <li><a class="dropdown-item" href="#">19989878654</a></li>
-            <li><a class="dropdown-item" href="#">19989878654</a></li>
-            <li><a class="dropdown-item" href="#">19989878654</a></li>
+            <li><a class="dropdown-item" href="#">C001</a></li>
+            <li><a class="dropdown-item" href="#">C002</a></li>
+            <li><a class="dropdown-item" href="#">C003</a></li>
+            <li><a class="dropdown-item" href="#">C004</a></li>
+            <li><a class="dropdown-item" href="#">C005</a></li>
+            <li><a class="dropdown-item" href="#">C006</a></li>
         </ul>
     </div>
 
@@ -166,9 +181,9 @@
         </ul>
     </div>
     <div id="d3">
-        <input class="form-control form-control-lg" type="text" placeholder="Item name" aria-label=".form-control-lg example" id="i2">
-        <input class="form-control form-control-lg" type="text" placeholder="Availability" aria-label=".form-control-lg example" id="i3">
-        <input class="form-control form-control-lg" type="text" placeholder="Unit Price" aria-label=".form-control-lg example" id="i4">
+        <input class="form-control form-control-lg" type="text" placeholder="Description" aria-label=".form-control-lg example" id="i2">
+        <input class="form-control form-control-lg" type="text" placeholder="Unit Price" aria-label=".form-control-lg example" id="i3">
+        <input class="form-control form-control-lg" type="text" placeholder="Qty On Hand" aria-label=".form-control-lg example" id="i4">
         <input class="form-control form-control-lg" type="text" placeholder="Qty" aria-label=".form-control-lg example" id="i5">
     </div>
 </section>
@@ -176,64 +191,57 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">Order ID</th>
-            <th scope="col">Customer ID</th>
             <th scope="col">Item Code</th>
+            <th scope="col">Description</th>
             <th scope="col">Unit Price</th>
             <th scope="col">Qty</th>
-            <th scope="col">Amount</th>
+            <th scope="col">Total</th>
+            <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <th scope="row">O001</th>
-            <td>19989878654</td>
-            <td>I002</td>
-            <td>Rs,90.00</td>
-            <td>4</td>
-            <td>Rs.360.00</td>
+            <th scope="row">I001</th>
+            <td>Cake</td>
+            <td>500.00</td>
+            <td>2</td>
+            <td>1000.00</td>
+            <td></td>
 
         </tr>
         <tr>
-            <th scope="row">O002</th>
-            <td>19989878654</td>
-            <td>I002</td>
-            <td>Rs,90.00</td>
-            <td>4</td>
-            <td>Rs.360.00</td>
+            <th scope="row">I002</th>
+            <td>Biscuts</td>
+            <td>295.00</td>
+            <td>1</td>
+            <td>295.00</td>
+            <td></td>
         </tr>
         <tr>
-            <th scope="row">O003</th>
-            <td>19989878654</td>
-            <td>I002</td>
-            <td>Rs,90.00</td>
-            <td>4</td>
-            <td>Rs.360.00</td>
+            <th scope="row">I003</th>
+            <td>Cke</td>
+            <td>200.00</td>
+            <td>2</td>
+            <td>600.00</td>
+            <td></td>
         </tr>
         <tr>
-            <th scope="row">O004</th>
-            <td>19989878654</td>
-            <td>I002</td>
-            <td>Rs,90.00</td>
-            <td>4</td>
-            <td>Rs.360.00</td>
+            <th scope="row">I004</th>
+            <td>Chocolate</td>
+            <td>180.00</td>
+            <td>1</td>
+            <td>180.00</td>
+            <td></td>
         </tr>
         <tr>
-            <th scope="row">O005</th>
-            <td>19989878654</td>
-            <td>I002</td>
-            <td>Rs,90.00</td>
-            <td>4</td>
-            <td>Rs.360.00</td>
+            <th scope="row">I004</th>
+            <td>Chocolate</td>
+            <td>180.00</td>
+            <td>1</td>
+            <td>180.00</td>
+            <td></td>
         </tr>
-        <tr>
-            <th scope="row">O006</th>
-            <td>19989878654</td>
-            <td>I002</td>
-            <td>Rs,90.00</td>
-            <td>4</td>
-            <td>Rs.360.00</td>
-        </tr>
+
         </tbody>
     </table>
 </section>
