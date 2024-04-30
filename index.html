@@ -120,7 +120,7 @@
             top: 115px;
         }
         #s01{
-            top: 368px;
+            top: 252px;
             height: 200px;
             width: 500px;
             position: absolute;
@@ -130,9 +130,9 @@
         #s03{
             height: 700px;
             width: 1200px;
-            top: 745px;
+            top: 533px;
             bottom: 0;
-            left: 0;
+            left: 850px;
             right: 0;
             position: absolute;
             margin: auto;
@@ -146,7 +146,7 @@
             border-radius: 15px;
         }
         #s02{
-            left: 10px;
+            left: 288px;
             top: 250px;
             height: 200px;
             width: 800px;
@@ -163,8 +163,8 @@
         }
         #s02>button{
             height: 60px;
-            width: 150px;
-            right: 265px;
+            width: 190px;
+            right: 177px;
             position: absolute;
             margin: auto;
             font-size: 30px;
@@ -195,24 +195,32 @@
             border-radius: 15px;
 
         }
-        #s05{
+        /*#s05{*/
 
-            right: 259px;
-            top: 265px;
+        /*    right: 259px;*/
+        /*    top: 265px;*/
+        /*    position: absolute;*/
+        /*    margin: auto;*/
+
+
+        /*}*/
+        /*#s05>button{*/
+        /*    height: 50px;*/
+        /*    width: 150px;*/
+        /*    background-color: #56C7AC;*/
+        /*    color: black;*/
+        /*    font-weight: bold;*/
+        /*}*/
+
+        #s06 {
+
             position: absolute;
-            margin: auto;
-
-
+            top: 429px;
+            height: 530px;
+            width: 732px;
+            left: 79px;
+            border: 2px solid black;
         }
-        #s05>button{
-            height: 50px;
-            width: 150px;
-            background-color: #56C7AC;
-            color: black;
-            font-weight: bold;
-        }
-
-
 
 
 
@@ -403,7 +411,8 @@
     <h2 class="display-2" id="h3">Item Manage</h2>
     <section id="s01">
         <button type="button" class="btn btn-danger" >Delete</button>
-        <button type="button" class="btn btn-warning">Clear</button>
+        <button type="button" class="btn btn-primary">Clear</button>
+        <button type="button" class="btn btn-warning"id="Update1">Update</button>
 
 
 
@@ -455,10 +464,37 @@
         </div>
 
     </section>
-    <section id="s05">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">New Item</button>
+    <section id="s06">
+        <form class="row g-3">
+
+            <div class="col-md-6">
+                <label for="CID" class="form-label">Item Code</label>
+                <input type="text" class="form-control" id="Code">
+            </div>
+            <br>
+
+            <br>
+            <div class="col-md-6">
+                <label for="Cname" class="form-label">Description</label>
+                <input type="text" class="form-control" id="Desc">
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label for="Caddress" class="form-label">Unit Price</label>
+                <input type="text" class="form-control" id="Price">
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label for="Ctel" class="form-label">Qty</label>
+                <input type="text" class="form-control" id="Qty">
+            </div>
+            <br>
+
+
+        </form>
 
     </section>
+
     <section id="s03">
         <table class="table">
             <thead>
@@ -479,34 +515,6 @@
 
 
             </tr>
-            <tr>
-                <th scope="row">I002</th>
-                <td>Chocolate</td>
-                <td>180.00</td>
-                <td>1000</td>
-
-            </tr>
-            <tr>
-                <th scope="row">I003</th>
-                <td >Milk</td>
-                <td>700.00</td>
-                <td>500</td>
-
-            </tr>
-            <tr>
-                <th scope="row">I004</th>
-                <td >Malith</td>
-                <td>300.00</td>
-                <td>5</td>
-
-            </tr>
-            <tr>
-                <th scope="row">I005</th>
-                <td >Sanduni</td>
-                <td>60..00</td>
-                <td>07</td>
-
-            </tr>
 
             </tbody>
         </table>
@@ -524,7 +532,7 @@
            display:'none'
        }
    )
-   $('#s01,#s02,#s05,#h3,#b01,#s03').css(
+   $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
        {
            display:'none'
        }
@@ -537,7 +545,7 @@
            }
        )
 
-       $('#s01,#s02,#s05,#h3,#b01,#s03').css(
+       $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
            {
                display:'none'
            }
@@ -551,7 +559,7 @@
            }
        )
 
-       $('#s01,#s02,#s05,#h3,#b01,#s03').css(
+       $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
            {
                display:'block'
            }
@@ -647,21 +655,23 @@
 
 var items=[]
 
+
 //     Item crud
 $('#item-save').on('click' , ()=>{
-    let val1 = $('#code').val();
-    let val2 = $('#desc').val();
-    let val3 = $('#price').val();
-    let val4 = $('#qty').val();
+    let code = $('#code1').val();
+    let desc = $('#desc1').val();
+    let unitPrice = $('#price1').val();
+    let qty = $('#qty1').val();
 
-    console.log(val1,val2,val3,val4)
+    console.log(code,desc,unitPrice,qty)
+
 
     // // create object
     let item ={
-        code: val1,
-        desc:val2,
-        unitPrice:val3,
-        qty:val4,
+        code: code,
+        desc:desc,
+        unitPrice:unitPrice,
+        qty:qty,
     }
     // // push to the array
     items.push(item);
@@ -687,8 +697,23 @@ function loadItemTable() {
         $('#item-details').append(record);
 
     });
-
 }
+$('#item-detail').on('click','tr',function (){
+    let index = $(this).index();
+    recordIndex=index;
+    var code = $(this).find(".code").text();
+    var desc = $(this).find(".description").text();
+    var price = $(this).find(".unitprice").text();
+    var qty = $(this).find(".qty").text();
+
+
+    console.log(id+ " "+name+" "+address+" "+tel+" ");
+    $('#Code').val(code);
+    $('#Desc').val(desc);
+    $('#Price').val(price);
+    $('#Qty').val(qty);
+
+});
 
 
 </script>
