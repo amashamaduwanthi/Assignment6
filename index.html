@@ -16,22 +16,24 @@
             text-shadow: 5px 2px black;
         }
         #s1{
-            top: 296px;
+            top: 219px;
             height: 200px;
             width: 500px;
             position: absolute;
             margin: auto;
         }
-        #s3{
-            height: 700px;
-            width: 1200px;
-            top: 400px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            position: absolute;
-            margin: auto;
-        }
+
+            #s3 {
+                height: 700px;
+                width: 1200px;
+                top: 437px;
+                bottom: 0;
+                left: 0;
+                right: -813px;
+                position: absolute;
+                margin: auto;
+            }
+
         #s1>button{
 
             height: 60px;
@@ -41,12 +43,13 @@
             border-radius: 15px;
         }
         #s2{
-            left: 10px;
-            height: 200px;
-            width: 800px;
+            left: 13px;
+            height: 376px;
+            width: 648px;
             position: absolute;
             margin: auto;
-            top: 169px;
+            top: 480px;
+            border: 2px solid black;
         }
         #s5{
             top: 120px;
@@ -57,16 +60,14 @@
             margin: auto;
         }
         #s2>button{
-            height: 60px;
+            height: 50px;
             width: 150px;
-            right: 265px;
-            position: absolute;
-            margin: auto;
-            font-size: 30px;
-            font-weight: bolder;
-            border-radius: 15px;
             background-color: #56C7AC;
             color: black;
+            font-weight: bold;
+            top: 47px;
+            right: 689px;
+            position: absolute;
         }
         #s2>input{
             width: 300px;
@@ -252,8 +253,9 @@
     <!--<hr class="border border-primary border-3 opacity-75">-->
 
     <section id="s1">
-        <button type="button" class="btn btn-danger" >Delete</button>
+        <button type="button" class="btn btn-danger" id="Delete" >Delete</button>
         <button type="button" class="btn btn-warning">Clear</button>
+        <button type="button" class="btn btn-primary">Update</button>
 
 
         <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -294,45 +296,75 @@
         </div>
         <!----------------------------------------------------------------------------------------->
     </section>
+<!--    <section id="s2">-->
+<!--        <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Search Customer Name Here" >-->
+<!--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>-->
+
+<!--        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">-->
+<!--            <div class="modal-dialog">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h1 class="modal-title fs-5" id="staticBackdropLabel1">Customer Details</h1>-->
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        <form>-->
+<!--                            <div class="mb-3">-->
+<!--                                <label for="Nic1" class="form-label">Id</label>-->
+<!--                                <input type="text" class="form-control" id="Nic1" aria-describedby="emailHelp">-->
+
+<!--                                <label for="Name1" class="form-label">Name</label>-->
+<!--                                <input type="text" class="form-control" id="Name1" aria-describedby="emailHelp">-->
+
+<!--                                <label for="Address1" class="form-label">Address</label>-->
+<!--                                <input type="text" class="form-control" id="Address1" aria-describedby="emailHelp">-->
+
+<!--                                <label for="Tel1" class="form-label">Tel</label>-->
+<!--                                <input type="tel" class="form-control" id="Tel1" aria-describedby="emailHelp">-->
+<!--                            </div>-->
+
+<!--                            <div class="mb-3 form-check">-->
+<!--                                <input type="checkbox" class="form-check-input" id="exampleCheck2">-->
+<!--                                <label class="form-check-label" for="exampleCheck1">All details are correct!!! </label>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="button" class="btn btn-warning">Update</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </section>-->
     <section id="s2">
-        <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Search Customer Name Here" >
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
+        <form class="row g-3">
 
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel1">Customer Details</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="Nic1" class="form-label">Id</label>
-                                <input type="text" class="form-control" id="Nic1" aria-describedby="emailHelp">
-
-                                <label for="Name1" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="Name1" aria-describedby="emailHelp">
-
-                                <label for="Address1" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="Address1" aria-describedby="emailHelp">
-
-                                <label for="Tel1" class="form-label">Tel</label>
-                                <input type="tel" class="form-control" id="Tel1" aria-describedby="emailHelp">
-                            </div>
-
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                <label class="form-check-label" for="exampleCheck1">All details are correct!!! </label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">Update</button>
-                    </div>
-                </div>
+            <div class="col-md-6">
+                <label for="CID" class="form-label">ID</label>
+                <input type="text" class="form-control" id="CID">
             </div>
-        </div>
+            <br>
+
+            <br>
+            <div class="col-md-6">
+                <label for="Cname" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="Cname">
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label for="Caddress" class="form-label">Customer Address</label>
+                <input type="text" class="form-control" id="Caddress">
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label for="Ctel" class="form-label">Telephone No</label>
+                <input type="text" class="form-control" id="Ctel">
+            </div>
+            <br>
+
+
+        </form>
 
     </section>
     <section id="s5">
@@ -518,6 +550,7 @@
 <script src="Assests/lib/jquery-3.7.1.min.js"></script>
 <script>
     var customers=[];
+    var recordIndex;
    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
        {
            display:'none'
@@ -562,10 +595,10 @@
         $('#Customer-detail').empty();
         customers.map((item, index) => {
             var record = ` <tr>
-       <td class="sid">${item.id}</td>
-         <td class="sname"> ${item.Name}</td>
-        <td class="sadress">${item.Address}</td>
-        <td class="stel">${item.Tel}</td>
+         <td class="cid">${item.id}</td>
+         <td class="cname"> ${item.Name}</td>
+         <td class="caddress">${item.Address}</td>
+        <td class="ctel">${item.Tel}</td>
 
          </tr>`
             $('#Customer-detail').append(record);
@@ -606,7 +639,27 @@
 
    })
 
+    $("#Delete").on('click', () => {
+        customers.splice(recordIndex, 1);
+        loadTable();
 
+    });
+
+    $('#Customer-detail').on('click','tr',function (){
+        let index = $(this).index();
+        var id = $(this).find(".cid").text();
+        var name = $(this).find(".cname").text();
+        var address = $(this).find(".caddress").text();
+        var tel = $(this).find(".ctel").text();
+
+
+        console.log(id+ " "+name+" "+address+" "+tel+" ");
+        $('#CID').val(id);
+        $('#Cname').val(name);
+        $('#Caddress').val(address);
+        $('#Ctel').val(tel);
+
+    });
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
