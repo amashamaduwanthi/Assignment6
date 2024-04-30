@@ -350,7 +350,7 @@
 
             </tr>
             </thead>
-            <tbody>
+            <tbody id="Customer-detail">
             <tr>
                 <th scope="row">C001</th>
                 <td>Amasha</td>
@@ -359,34 +359,7 @@
 
 
             </tr>
-            <tr>
-                <th scope="row">C002</th>
-                <td>Lalith</td>
-                <td>Panadura</td>
-                <td>0786756789</td>
 
-            </tr>
-            <tr>
-                <th scope="row">C003</th>
-                <td >Chamara</td>
-                <td>colombo</td>
-                <td>0735679987</td>
-
-            </tr>
-            <tr>
-                <th scope="row">C004</th>
-                <td >Malith</td>
-                <td>colombo</td>
-                <td>0765678987</td>
-
-            </tr>
-            <tr>
-                <th scope="row">C005</th>
-                <td >Sanduni</td>
-                <td>colombo</td>
-                <td>076565555</td>
-
-            </tr>
 
             </tbody>
         </table>
@@ -544,7 +517,7 @@
 </section>
 <script src="Assests/lib/jquery-3.7.1.min.js"></script>
 <script>
-    var Customers=[];
+    var customers=[];
    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
        {
            display:'none'
@@ -585,6 +558,27 @@
    });
 
 //    crud Add
+    function loadTable() {
+        $('#Customer-detail').empty();
+        customers.map((item, index) => {
+            var record = ` <tr>
+       <td class="sid">${item.id}</td>
+         <td class="sname"> ${item.Name}</td>
+        <td class="sadress">${item.Address}</td>
+        <td class="stel">${item.Tel}</td>
+
+         </tr>`
+            $('#Customer-detail').append(record);
+
+        });
+
+    }
+
+
+
+
+
+
    $('#save').on('click' , ()=>{
        let val1 = $('#Nic').val();
        let val2 = $('#Name').val();
@@ -594,17 +588,15 @@
        console.log(val1,val2,val3,val4)
 
        // // create object
-       let Customers ={
+       let customer ={
            id: val1,
-           firstName:val2,
-           lastName:val3,
-           address:val4,
-
-       //
-       // }
+           Name:val2,
+           Address:val3,
+           Tel:val4,
+       }
        // // push to the array
-       // students.push(student);
-       // loadTable();
+       customers.push(customer);
+       loadTable();
 
 
        // $('#SID').val("");
