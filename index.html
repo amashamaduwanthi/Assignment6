@@ -698,7 +698,7 @@ function loadItemTable() {
 
     });
 }
-$('#item-detail').on('click','tr',function (){
+$('#item-details').on('click','tr',function (){
     let index = $(this).index();
     recordIndex=index;
     var code = $(this).find(".code").text();
@@ -707,7 +707,7 @@ $('#item-detail').on('click','tr',function (){
     var qty = $(this).find(".qty").text();
 
 
-    console.log(id+ " "+name+" "+address+" "+tel+" ");
+    console.log(code+ " "+desc+" "+price+" "+qty+" ");
     $('#Code').val(code);
     $('#Desc').val(desc);
     $('#Price').val(price);
