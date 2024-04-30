@@ -117,10 +117,10 @@
             font-size: 50px;
             text-shadow: 5px 2px black;
             position: absolute;
-            top: 697px;
+            top: 115px;
         }
         #s01{
-            top: 908px;
+            top: 368px;
             height: 200px;
             width: 500px;
             position: absolute;
@@ -130,7 +130,7 @@
         #s03{
             height: 700px;
             width: 1200px;
-            top: 1400px;
+            top: 745px;
             bottom: 0;
             left: 0;
             right: 0;
@@ -147,7 +147,7 @@
         }
         #s02{
             left: 10px;
-            top: 810px;
+            top: 250px;
             height: 200px;
             width: 800px;
             position: absolute;
@@ -197,8 +197,8 @@
         }
         #s05{
 
-            right: 350px;
-            top: 900px;
+            right: 259px;
+            top: 265px;
             position: absolute;
             margin: auto;
 
@@ -406,47 +406,14 @@
         <button type="button" class="btn btn-warning">Clear</button>
 
 
-        <div class="modal fade" id="staticBackdrop01" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel02">New Item</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="code" class="form-label">Item Code</label>
-                                <input type="text" class="form-control" id="code" aria-describedby="emailHelp">
 
-                                <label for="desc" class="form-label">Description</label>
-                                <input type="text" class="form-control" id="desc" aria-describedby="emailHelp">
 
-                                <label for="price" class="form-label">Unit Price</label>
-                                <input type="text" class="form-control" id="price" aria-describedby="emailHelp">
 
-                                <label for="qty" class="form-label">Qty On Hand</label>
-                                <input type="tel" class="form-control" id="qty" aria-describedby="emailHelp">
 
-                            </div>
-
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="checkbox2">
-                                <label class="form-check-label" for="checkbox2">All details are correct!!! </label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!----------------------------------------------------------------------------------------->
     </section>
     <section id="s02">
-        <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Search Item Name Here" >
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Backdrop01">Search</button>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Backdrop01">New Item</button>
 
         <div class="modal fade" id="Backdrop01" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
             <div class="modal-dialog">
@@ -481,7 +448,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">Update</button>
+                        <button type="button" class="btn btn-primary"id="item-save">Add</button>
                     </div>
                 </div>
             </div>
@@ -503,7 +470,7 @@
 
             </tr>
             </thead>
-            <tbody>
+            <tbody id="item-details">
             <tr>
                 <th scope="row">I001</th>
                 <td>Cake</td>
@@ -549,6 +516,7 @@
 </section>
 <script src="Assests/lib/jquery-3.7.1.min.js"></script>
 <script>
+<!--    customer -->
     var customers=[];
     var recordIndex;
    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
@@ -606,11 +574,6 @@
         });
 
     }
-
-
-
-
-
 
    $('#save').on('click' , ()=>{
        let val1 = $('#Nic').val();
@@ -680,6 +643,53 @@
         loadTable();
 
     });
+
+
+var items=[]
+
+//     Item crud
+$('#item-save').on('click' , ()=>{
+    let val1 = $('#code').val();
+    let val2 = $('#desc').val();
+    let val3 = $('#price').val();
+    let val4 = $('#qty').val();
+
+    console.log(val1,val2,val3,val4)
+
+    // // create object
+    let item ={
+        code: val1,
+        desc:val2,
+        unitPrice:val3,
+        qty:val4,
+    }
+    // // push to the array
+    items.push(item);
+    loadItemTable();
+
+
+    // $('#SID').val("");
+    // $('#fname').val("");
+    // $('#Lname').val("");
+    // $('#address').val("");
+
+})
+function loadItemTable() {
+    $('#item-details').empty();
+    items.map((item, index) => {
+        var record = ` <tr>
+         <td class="code">${item.code}</td>
+         <td class="description"> ${item.desc}</td>
+         <td class="unitprice">${item.unitPrice}</td>
+        <td class="qty">${item.qty}</td>
+
+         </tr>`
+        $('#item-details').append(record);
+
+    });
+
+}
+
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
