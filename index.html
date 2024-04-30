@@ -255,7 +255,7 @@
     <section id="s1">
         <button type="button" class="btn btn-danger" id="Delete" >Delete</button>
         <button type="button" class="btn btn-warning">Clear</button>
-        <button type="button" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-primary"id="Update">Update</button>
 
 
         <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -647,6 +647,7 @@
 
     $('#Customer-detail').on('click','tr',function (){
         let index = $(this).index();
+        recordIndex=index;
         var id = $(this).find(".cid").text();
         var name = $(this).find(".cname").text();
         var address = $(this).find(".caddress").text();
@@ -658,6 +659,25 @@
         $('#Cname').val(name);
         $('#Caddress').val(address);
         $('#Ctel').val(tel);
+
+    });
+    $('#Update').on('click' , ()=> {
+
+        let val1 = $('#CID').val();
+        let val2 = $('#Cname').val();
+        let val3 = $('#Caddress').val();
+        let val4 = $('#Ctel').val();
+
+        let customerObj=customers[recordIndex];
+        customerObj.id=val1;
+        customerObj.Name=val2;
+        customerObj.Address=val3;
+        customerObj.Tel=val4;
+
+        console.log("S1: ", customerObj);
+        console.log("S2: ", customers[recordIndex]);
+
+        loadTable();
 
     });
 
