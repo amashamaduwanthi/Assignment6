@@ -222,7 +222,83 @@
             border: 2px solid black;
         }
 
+        #d2{
+            width: 740px;
+            height:800px;
+            background-image: url("Assests/9-95016_setup-online-store-hd-png-download.png");
+            border-radius: 45px;
 
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            right: 100px;
+            margin:auto;
+        }
+        #h44{
+            font-weight: bold;
+            top:100px;
+            position: absolute;
+            margin: auto;
+            color: #56C7AC;
+            text-shadow: 5px 2px black;
+        }
+        #s11{
+            width: 500px;
+            height:650px;
+
+            top: 50px;
+            bottom: 0;
+            position: absolute;
+            left: 0;
+            margin:auto;
+
+        }
+        #s11>#d1>button{
+            height: 150px;
+            width: 400px;
+            font-weight: bolder;
+            font-size: 30px;
+            background-color: #D9D9D9;
+            color: black;
+        }
+        #s22>div>#h4{
+            top: 79px;
+            right:590px;
+            position: absolute;
+            margin: auto;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #s22>div>#h5{
+            top: 79px;
+            right: 240px;
+            position: absolute;
+            margin: auto;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #h1{
+            font-weight: bold;
+            text-shadow: 5px 2px black;
+        }
+        #d3{
+            height: 60px;
+            width: 150px;
+            bottom: 100px;
+            left: 50px;
+            position: absolute;
+            margin: auto;
+        }
+        #d3>button{
+            height: 60px;
+            width: 150px;
+            background-color: #56C7AC;
+            font-weight: bold;
+            color: black;
+        }
 
 
     </style>
@@ -253,6 +329,42 @@
         </div>
     </nav>
 </header>
+<!--home section-->
+<section>
+
+    <h3 class="display-2" id="h44">DashBoard</h3>
+    <section id="s11">
+        <div id="d1">
+            <button type="button" class="btn btn-primary" id="b11" onclick="window.location='Customer.html'">Customer
+                <img src="Assests/icons8-customer-48.png" alt="">
+            </button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" id="b2" onclick="window.location='Item.html'">Item
+                <img src="Assests/icons8-item-64.png" alt=""></button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" id="b3"onclick="window.location='PlaceOrder.html'">Place Order
+                <img src="Assests/icons8-cart.gif" alt=""></button>
+            </button>
+        </div>
+    </section>
+    <section id="s22">
+        <div>
+            <h4 class="display-2" id="h4">  Time-10:50 P.M</h4>
+            <h4 class="display-2" id="h5">  Date-2024-01-14</h4>
+
+
+        </div>
+
+    </section>
+
+    <div id="d2">
+    </div>
+    <div id="d3">
+        <button type="button" class="btn btn-primary" id="b4"onclick="window.location='index.html'">Log Out</button>
+    </div>
+</section>
 <!--customer section-->
 <section>
 
@@ -410,7 +522,7 @@
 <section>
     <h2 class="display-2" id="h3">Item Manage</h2>
     <section id="s01">
-        <button type="button" class="btn btn-danger" >Delete</button>
+        <button type="button" class="btn btn-danger"id="item-delete" >Delete</button>
         <button type="button" class="btn btn-primary">Clear</button>
         <button type="button" class="btn btn-warning"id="Update1">Update</button>
 
@@ -546,6 +658,11 @@
        )
 
        $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
+           {
+               display:'none'
+           }
+       )
+       $('#s11,#s22,#h44,#d2,#d3').css(
            {
                display:'none'
            }
@@ -716,6 +833,31 @@ $('#item-details').on('click','tr',function (){
 
 });
 loadItemTable();
+
+$("#item-delete").on('click', () => {
+    items.splice(recordIndex, 1);
+    loadItemTable();
+
+});
+$('#Update1').on('click' , ()=> {
+
+    let val1 = $('#Code').val();
+    let val2 = $('#Desc').val();
+    let val3 = $('#Price').val();
+    let val4 = $('#Qty').val();
+
+    let itemObj=items[recordIndex];
+    itemObj.code=val1;
+    itemObj.desc=val2;
+    itemObj.unitPrice=val3;
+    itemObj.qty=val4;
+
+    console.log("S1: ", itemObj);
+    console.log("S2: ", items[recordIndex]);
+
+    loadItemTable();
+
+});
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
