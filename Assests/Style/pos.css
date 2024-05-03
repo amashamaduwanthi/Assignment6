@@ -1,0 +1,414 @@
+#h1{
+    font-weight: bolder;
+    text-shadow: 5px 2px black;
+}
+#h2{
+    color: #56C7AC;
+    font-size: 50px;
+    text-shadow: 5px 2px black;
+}
+#s1{
+    top: 219px;
+    height: 200px;
+    width: 500px;
+    position: absolute;
+    margin: auto;
+}
+
+#s3 {
+    height: 700px;
+    width: 1200px;
+    top: 437px;
+    bottom: 0;
+    left: 0;
+    right: -813px;
+    position: absolute;
+    margin: auto;
+}
+
+#s1>button{
+
+    height: 60px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: bolder;
+    border-radius: 15px;
+}
+#s2{
+    left: 13px;
+    height: 376px;
+    width: 648px;
+    position: absolute;
+    margin: auto;
+    top: 480px;
+    border: 2px solid black;
+}
+#s5{
+    top: 120px;
+    height: 400px;
+    width: 800px;
+    right: 10px;
+    position: absolute;
+    margin: auto;
+}
+#s2>button{
+    height: 50px;
+    width: 150px;
+    background-color: #56C7AC;
+    color: black;
+    font-weight: bold;
+    top: 47px;
+    right: 689px;
+    position: absolute;
+}
+#s2>input{
+    width: 300px;
+    right: 477px;
+    height: 60px;
+    position: absolute;
+    margin: auto;
+    font-weight: bold;
+    border-radius: 15px;
+    border: solid 5px black;
+}
+#b1{
+    height: 60px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: bolder;
+    top: 15px;
+    right: 15px;
+    position: absolute;
+    margin: auto;
+    border-radius: 15px;
+
+}
+#s5{
+
+    right: 350px;
+    top: 182px;
+    position: absolute;
+    margin: auto;
+
+
+}
+#s5>button{
+    height: 50px;
+    width: 150px;
+    background-color: #56C7AC;
+    color: black;
+    font-weight: bold;
+}
+/*------------------------------------------*/
+#h1{
+    font-weight: bolder;
+    text-shadow: 5px 2px black;
+}
+#h3{
+    color: #56C7AC;
+    font-size: 50px;
+    text-shadow: 5px 2px black;
+    position: absolute;
+    top: 115px;
+}
+#s01{
+    top: 252px;
+    height: 200px;
+    width: 500px;
+    position: absolute;
+    margin: auto;
+
+}
+#s03{
+    height: 700px;
+    width: 1200px;
+    top: 533px;
+    bottom: 0;
+    left: 850px;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+#s01>button{
+
+    height: 60px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: bolder;
+    border-radius: 15px;
+}
+#s02{
+    left:485px;
+    top: 250px;
+    height: 200px;
+    width: 800px;
+    position: absolute;
+    margin: auto;
+}
+#s05{
+    top: 120px;
+    height: 400px;
+    width: 800px;
+    right: 10px;
+    position: absolute;
+    margin: auto;
+}
+#s02>button{
+    height: 60px;
+    width: 190px;
+    right: 177px;
+    position: absolute;
+    margin: auto;
+    font-size: 30px;
+    font-weight: bolder;
+    border-radius: 15px;
+    background-color: #56C7AC;
+    color: black;
+}
+#s02>input{
+    width: 300px;
+    right: 477px;
+    height: 60px;
+    position: absolute;
+    margin: auto;
+    font-weight: bold;
+    border-radius: 15px;
+    border: solid 5px black;
+}
+#b1{
+    height: 60px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: bolder;
+    top: 100px;
+    right: 15px;
+    position: absolute;
+    margin: auto;
+    border-radius: 15px;
+
+}
+/*#s05{*/
+
+/*    right: 259px;*/
+/*    top: 265px;*/
+/*    position: absolute;*/
+/*    margin: auto;*/
+
+
+/*}*/
+/*#s05>button{*/
+/*    height: 50px;*/
+/*    width: 150px;*/
+/*    background-color: #56C7AC;*/
+/*    color: black;*/
+/*    font-weight: bold;*/
+/*}*/
+
+#s06 {
+
+    position: absolute;
+    top: 429px;
+    height: 530px;
+    width: 732px;
+    left: 79px;
+    border: 2px solid black;
+}
+
+#d2{
+    width: 740px;
+    height:800px;
+    background-image: url("Assests/9-95016_setup-online-store-hd-png-download.png");
+    border-radius: 45px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    right: 100px;
+    margin:auto;
+}
+#h44{
+    font-weight: bold;
+    top:100px;
+    position: absolute;
+    margin: auto;
+    color: #56C7AC;
+    text-shadow: 5px 2px black;
+}
+#s11{
+    width: 500px;
+    height:650px;
+
+    top: 50px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    margin:auto;
+
+}
+#s11>#d1>button{
+    height: 150px;
+    width: 400px;
+    font-weight: bolder;
+    font-size: 30px;
+    background-color: #D9D9D9;
+    color: black;
+}
+#s22>div>#h4{
+    top: 79px;
+    right:590px;
+    position: absolute;
+    margin: auto;
+    font-size: 35px;
+    font-weight: bold;
+}
+#s22>div>#h5{
+    top: 79px;
+    right: 240px;
+    position: absolute;
+    margin: auto;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#d3{
+    height: 60px;
+    width: 150px;
+    bottom: 100px;
+    left: 50px;
+    position: absolute;
+    margin: auto;
+}
+#d3>button{
+    height: 60px;
+    width: 150px;
+    background-color: #56C7AC;
+    font-weight: bold;
+    color: black;
+}
+/*    place order CsS*/
+#h22{
+    font-weight: bolder;
+    color: #56C7AC;
+    text-shadow: 5px 2px black;
+}
+#b111{
+    height: 60px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: bolder;
+    bottom: 30px;
+    right: 215px;
+    position: absolute;
+    margin: auto;
+    border-radius: 25px;
+    color: black;
+    background-color: #EBDD63;
+}
+#s111{
+    width: 500px;
+    height: 400px;
+    top: 250px;
+    left:100px;
+    position: absolute;
+    margin: auto;
+}
+#s111>#d22>#i1{
+    height: 20px;
+    width: 250px;
+    top:0;
+    left: 180px;
+    position: absolute;
+    margin: auto;
+    font-size: 15px;
+    font-weight:bold;
+}
+#s222{
+    width: 500px;
+    height: 400px;
+    top: 350px;
+    left:100px;
+    position: absolute;
+    margin: auto;
+}
+
+#s222>#d33>#i2{
+    height: 20px;
+    width: 150px;
+    top:0;
+    left: 180px;
+    position: absolute;
+    margin: auto;
+    font-size: 15px;
+    font-weight:bold;
+}
+#s222>#d33>#i3{
+    height: 20px;
+    width: 200px;
+    top:0;
+    left: 350px;
+    position: absolute;
+    margin: auto;
+    font-size: 15px;
+    font-weight:bold;
+}
+#s222>#d33>#i4{
+    height: 20px;
+    width: 200px;
+    top:0;
+    left: 570px;
+    position: absolute;
+    margin: auto;
+    font-size: 15px;
+    font-weight:bold;
+}
+#s222>#d33>#i5{
+    height: 20px;
+    width: 150px;
+    top:0;
+    left: 800px;
+    position: absolute;
+    margin: auto;
+    font-size: 15px;
+    font-weight:bold;
+}
+#s333{
+    height: 400px;
+    bottom: 100px;
+    position: absolute;
+    margin: auto;
+    left: 50px;
+    right: 50px;
+}
+
+#s4>#d4>button{
+    bottom: 30px;
+    right: 30px;
+    position: absolute;
+    margin: auto;
+    width: 140px;
+    height: 60px;
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 25px;
+    background-color: #56C7AC;
+}
+#h1{
+    font-weight: bold;
+    text-shadow: 5px 2px black;
+}
+#h33{
+    color: #56C7AC;
+    position: absolute;
+    left: 50px;
+    margin: auto;
+}
+#h444{
+    position: absolute;
+    top: 920px;
+    left: 50px;
+    margin: auto;
+}
