@@ -1,3 +1,8 @@
+import {items} from "../db/CustomerDb.js";
+
+import {ItemModel} from "../model/ItemModel.js";
+
+var recordIndex;
 $('#Item-manage').on('click', () =>{
     $('#s1,#s2,#s5,#h2,#b1,#s3').css(
         {
@@ -21,7 +26,7 @@ $('#Item-manage').on('click', () =>{
         }
     )
 });
-var items=[]
+// var items=[]
 
 
 //     Item crud
@@ -32,17 +37,17 @@ $('#item-save').on('click' , ()=>{
     let qty = $('#qty1').val();
 
     console.log(code,desc,unitPrice,qty)
-
+  let item1=new ItemModel(code,desc,unitPrice,qty);
 
     // // create object
-    let item ={
-        code: code,
-        desc:desc,
-        unitPrice:unitPrice,
-        qty:qty,
-    }
+    // let item ={
+    //     code: code,
+    //     desc:desc,
+    //     unitPrice:unitPrice,
+    //     qty:qty,
+    // }
     // // push to the array
-    items.push(item);
+    items.push(item1);
     loadItemTable();
 
 

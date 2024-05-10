@@ -1,2 +1,2 @@
 export var customers=[];
-export var Items=[];
+export var items=[];

@@ -2,6 +2,7 @@
 import {customers} from "../db/CustomerDb.js";
 
 import {customer} from "../model/CustomerModel.js";
+
 // var customers=[];
 var recordIndex;
 $('#s1,#s2,#s5,#h2,#b1,#s3').css(
