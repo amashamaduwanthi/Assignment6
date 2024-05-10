@@ -1,5 +1,8 @@
 <!--    customer -->
-var customers=[];
+import {customers} from "../db/CustomerDb.js";
+
+import {customer} from "../model/CustomerModel.js";
+// var customers=[];
 var recordIndex;
 $('#s1,#s2,#s5,#h2,#b1,#s3').css(
     {
@@ -136,16 +139,16 @@ $('#save').on('click' , ()=>{
     let val4 = $('#Tel').val();
 
     console.log(val1,val2,val3,val4)
-
+    let customer1 = new customer(val1,val2,val3,val4);
     // // create object
-    let customer ={
-        id: val1,
-        Name:val2,
-        Address:val3,
-        Tel:val4,
-    }
+    // let customer ={
+    //     id: val1,
+    //     Name:val2,
+    //     Address:val3,
+    //     Tel:val4,
+    // }
     // // push to the array
-    customers.push(customer);
+    customers.push(customer1);
     loadTable();
 
 
@@ -199,91 +202,91 @@ $('#Update').on('click' , ()=> {
 });
 
 
-var items=[]
-
-
-//     Item crud
-$('#item-save').on('click' , ()=>{
-    let code = $('#code1').val();
-    let desc = $('#desc1').val();
-    let unitPrice = $('#price1').val();
-    let qty = $('#qty1').val();
-
-    console.log(code,desc,unitPrice,qty)
-
-
-    // // create object
-    let item ={
-        code: code,
-        desc:desc,
-        unitPrice:unitPrice,
-        qty:qty,
-    }
-    // // push to the array
-    items.push(item);
-    loadItemTable();
-
-
-    // $('#SID').val("");
-    // $('#fname').val("");
-    // $('#Lname').val("");
-    // $('#address').val("");
-
-})
-function loadItemTable() {
-    $('#item-details').empty();
-    items.map((item, index) => {
-        var record = ` <tr>
-         <td class="code">${item.code}</td>
-         <td class="description"> ${item.desc}</td>
-         <td class="unitprice">${item.unitPrice}</td>
-        <td class="qty">${item.qty}</td>
-
-         </tr>`
-        $('#item-details').append(record);
-
-
-    });
-}
-$('#item-details').on('click','tr',function (){
-    let index = $(this).index();
-    recordIndex=index;
-    var code = $(this).find(".code").text();
-    var desc = $(this).find(".description").text();
-    var price = $(this).find(".unitprice").text();
-    var qty = $(this).find(".qty").text();
-
-
-    console.log(code+ " "+desc+" "+price+" "+qty+" ");
-    $('#Code').val(code);
-    $('#Desc').val(desc);
-    $('#Price').val(price);
-    $('#Qty').val(qty);
-
-});
-loadItemTable();
-
-$("#item-delete").on('click', () => {
-    items.splice(recordIndex, 1);
-    loadItemTable();
-
-});
-$('#item-update').on('click' , ()=> {
-
-    let val1 = $('#Code').val();
-    let val2 = $('#Desc').val();
-    let val3 = $('#Price').val();
-    let val4 = $('#Qty').val();
-
-    let itemObj=items[recordIndex];
-    itemObj.code=val1;
-    itemObj.desc=val2;
-    itemObj.price=val3;
-    itemObj.qty=val4;
-
-    console.log("S1: ", itemObj);
-    console.log("S2: ", items[recordIndex]);
-
-    loadItemTable();
-
-});
+// var items=[]
+//
+//
+// //     Item crud
+// $('#item-save').on('click' , ()=>{
+//     let code = $('#code1').val();
+//     let desc = $('#desc1').val();
+//     let unitPrice = $('#price1').val();
+//     let qty = $('#qty1').val();
+//
+//     console.log(code,desc,unitPrice,qty)
+//
+//
+//     // // create object
+//     let item ={
+//         code: code,
+//         desc:desc,
+//         unitPrice:unitPrice,
+//         qty:qty,
+//     }
+//     // // push to the array
+//     items.push(item);
+//     loadItemTable();
+//
+//
+//     // $('#SID').val("");
+//     // $('#fname').val("");
+//     // $('#Lname').val("");
+//     // $('#address').val("");
+//
+// })
+// function loadItemTable() {
+//     $('#item-details').empty();
+//     items.map((item, index) => {
+//         var record = ` <tr>
+//          <td class="code">${item.code}</td>
+//          <td class="description"> ${item.desc}</td>
+//          <td class="unitprice">${item.unitPrice}</td>
+//         <td class="qty">${item.qty}</td>
+//
+//          </tr>`
+//         $('#item-details').append(record);
+//
+//
+//     });
+// }
+// $('#item-details').on('click','tr',function (){
+//     let index = $(this).index();
+//     recordIndex=index;
+//     var code = $(this).find(".code").text();
+//     var desc = $(this).find(".description").text();
+//     var price = $(this).find(".unitprice").text();
+//     var qty = $(this).find(".qty").text();
+//
+//
+//     console.log(code+ " "+desc+" "+price+" "+qty+" ");
+//     $('#Code').val(code);
+//     $('#Desc').val(desc);
+//     $('#Price').val(price);
+//     $('#Qty').val(qty);
+//
+// });
+// loadItemTable();
+//
+// $("#item-delete").on('click', () => {
+//     items.splice(recordIndex, 1);
+//     loadItemTable();
+//
+// });
+// $('#item-update').on('click' , ()=> {
+//
+//     let val1 = $('#Code').val();
+//     let val2 = $('#Desc').val();
+//     let val3 = $('#Price').val();
+//     let val4 = $('#Qty').val();
+//
+//     let itemObj=items[recordIndex];
+//     itemObj.code=val1;
+//     itemObj.desc=val2;
+//     itemObj.price=val3;
+//     itemObj.qty=val4;
+//
+//     console.log("S1: ", itemObj);
+//     console.log("S2: ", items[recordIndex]);
+//
+//     loadItemTable();
+//
+// });

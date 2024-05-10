@@ -459,9 +459,7 @@
                 <li class="nav-item">
                     <span class="nav-link" id="order-manage">Place order</span>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Log Out</a>
-                </li>
+
             </ul>
         </div>
     </nav>
@@ -472,16 +470,16 @@
     <h3 class="display-2" id="h44">DashBoard</h3>
     <section id="s11">
         <div id="d1">
-            <button type="button" class="btn btn-primary" id="b11" onclick="window.location='Customer.html'">Customer
+            <button type="button" class="btn btn-primary" id="b11" >Customer
                 <img src="Assests/icons8-customer-48.png" alt="">
             </button>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" id="b2" onclick="window.location='Item.html'">Item
+            <button type="button" class="btn btn-primary" id="b2" >Item
                 <img src="Assests/icons8-item-64.png" alt=""></button>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" id="b3"onclick="window.location='PlaceOrder.html'">Place Order
+            <button type="button" class="btn btn-primary" id="b3">Place Order
                 <img src="Assests/icons8-cart.gif" alt=""></button>
             </button>
         </div>
@@ -498,15 +496,13 @@
 
     <div id="d2">
     </div>
-    <div id="d3">
-        <button type="button" class="btn btn-primary" id="b4"onclick="window.location='index.html'">Log Out</button>
-    </div>
+
 </section>
 <!--customer section-->
 <section>
 
     <h2 class="display-2" id="h2">Customer Manage</h2>
-    <button type="button" class="btn btn-info" id="b1" onclick="window.location='Home.html'">Back</button>
+
     <!--<hr class="border border-primary border-3 opacity-75">-->
 
     <section id="s1">
@@ -773,11 +769,11 @@
 </section>
 
 <!--placeorder-->
-
+<section>
 <h2 class="display-2" id="h22">Place Order</h2>
 <h3 id="h33"> Order Id :O001</h3>
 <h3 id="h444">New Total :</h3>
-<button type="button" class="btn btn-info" id="b111" onclick="window.location='Home.html'">Back</button>
+
 
 <section id="s111">
     <div class="btn-group">
@@ -920,9 +916,10 @@
         </div>
     </div>
 </section>
+</section>
 
 <script src="Assests/lib/jquery-3.7.1.min.js"></script>
-<script src="Scripts/pos.js">
+<script type="module" src="Controller/Customer.js">
 // <!--    customer -->
 //     var customers=[];
 //     var recordIndex;
