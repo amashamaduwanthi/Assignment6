@@ -15,7 +15,7 @@ $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
         display:'none'
     }
 )
-$('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
+$('#place-order-section').css(
     {
         display:'none'
     }
@@ -38,7 +38,7 @@ $('#Customer-manage').on('click', () =>{
             display:'none'
         }
     )
-    $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
+    $('#place-order-section').css(
         {
             display:'none'
         }
@@ -62,7 +62,7 @@ $('#Item-manage').on('click', () =>{
             display:'none'
         }
     )
-    $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
+    $('#place-order-section').css(
         {
             display:'none'
         }
@@ -85,7 +85,7 @@ $('#Home-mange').on('click', () =>{
             display:'block'
         }
     )
-    $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
+    $('#place-order-section').css(
         {
             display:'none'
         }
@@ -108,7 +108,7 @@ $('#order-manage').on('click', () =>{
             display:'none'
         }
     )
-    $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
+    $('#place-order-section').css(
         {
             display:'block'
         }

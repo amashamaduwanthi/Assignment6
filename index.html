@@ -768,451 +768,134 @@
     </section>
 </section>
 
-<!--placeorder-->
-<section>
-<h2 class="display-2" id="h22">Place Order</h2>
-<h3 id="h33"> Order Id :O001</h3>
-<h3 id="h444">New Total :</h3>
 
+<section id="place-order-section">
+    <div class="formInfo">
 
-<section id="s111">
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary">Customer ID</button>
-        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">C001</a></li>
-            <li><a class="dropdown-item" href="#">C002</a></li>
-            <li><a class="dropdown-item" href="#">C003</a></li>
-            <li><a class="dropdown-item" href="#">C004</a></li>
-            <li><a class="dropdown-item" href="#">C005</a></li>
-            <li><a class="dropdown-item" href="#">C006</a></li>
-        </ul>
+        <h2>Place Order</h2>
     </div>
-
-    <div id="d22">
-        <input class="form-control form-control-lg" type="text" placeholder="customer Name" aria-label=".form-control-lg example" id="i1">
-    </div>
-
-</section>
-<section id="s222">
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary">Item Code </button>
-        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">I001</a></li>
-            <li><a class="dropdown-item" href="#">I002</a></li>
-            <li><a class="dropdown-item" href="#">I003</a></li>
-            <li><a class="dropdown-item" href="#">I004</a></li>
-            <li><a class="dropdown-item" href="#">I005</a></li>
-            <li><a class="dropdown-item" href="#">I006</a></li>
-        </ul>
-    </div>
-    <div id="d33">
-        <input class="form-control form-control-lg" type="text" placeholder="Description" aria-label=".form-control-lg example" id="i2">
-        <input class="form-control form-control-lg" type="text" placeholder="Unit Price" aria-label=".form-control-lg example" id="i3">
-        <input class="form-control form-control-lg" type="text" placeholder="Qty On Hand" aria-label=".form-control-lg example" id="i4">
-        <input class="form-control form-control-lg" type="text" placeholder="Qty" aria-label=".form-control-lg example" id="i5">
-    </div>
-</section>
-<section id="s333">
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Item Code</th>
-            <th scope="col">Description</th>
-            <th scope="col">Unit Price</th>
-            <th scope="col">Qty</th>
-            <th scope="col">Total</th>
-            <th scope="col">Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">I001</th>
-            <td>Cake</td>
-            <td>500.00</td>
-            <td>2</td>
-            <td>1000.00</td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <th scope="row">I002</th>
-            <td>Biscuts</td>
-            <td>295.00</td>
-            <td>1</td>
-            <td>295.00</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">I003</th>
-            <td>Cke</td>
-            <td>200.00</td>
-            <td>2</td>
-            <td>600.00</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">I004</th>
-            <td>Chocolate</td>
-            <td>180.00</td>
-            <td>1</td>
-            <td>180.00</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">I004</th>
-            <td>Chocolate</td>
-            <td>180.00</td>
-            <td>1</td>
-            <td>180.00</td>
-            <td></td>
-        </tr>
-
-        </tbody>
-    </table>
-</section>
-<section id="s4">
-    <div id="d4">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Place order</button>
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel1">Payment</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="card">
+        <div class="card-header">
+            Home / Order
+        </div>
+        <div class="card-body">
+            <div class="grid-container-place-order">
+                <!-- Invoice Details div-->
+                <div class="card">
+                    <div class="card-header" id="searchInvoiceDetailsTitle">
+                        Select who's making the order
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="Nic1" class="form-label">Order ID</label>
-                                <input type="text" class="form-control" id="Nic1" aria-describedby="emailHelp">
-
-                                <label for="Name1" class="form-label">Amount</label>
-                                <input type="text" class="form-control" id="Name1" aria-describedby="emailHelp">
-
-                                <label for="Address1" class="form-label">Sub Total</label>
-                                <input type="text" class="form-control" id="Address1" aria-describedby="emailHelp">
-
-                                <label for="Tel1" class="form-label">Balance</label>
-                                <input type="tel" class="form-control" id="Tel1" aria-describedby="emailHelp">
-
-
-
-                            </div>
-
-
-                        </form>
+                    <div class="card-body invoiceDetailsInputs">
+                        <div id="customerIdSelectorDiv">
+                            <label for="customerIdSelector" class="form-label">Customer ID *</label>
+                            <select class="form-select form-select-sm" id="customerIdSelector" aria-label="Small select example">
+                                <option selected>Customers</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectedCustomerIdPlaceOrder" class="form-label">Selected Customer</label>
+                            <input type="text" class="form-control" id="selectedCustomerIdPlaceOrder" placeholder="Customer ID">
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectedCustomerNamePlaceOrder" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="selectedCustomerNamePlaceOrder" placeholder="Customer Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectedCustomerAddressPlaceOrder" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="selectedCustomerAddressPlaceOrder" placeholder="Customer Address">
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Pay</button>
+                </div>
+                <!--Item Details div-->
+                <div class="card">
+                    <div class="card-header" id="placeOrderCardTitle">
+                        Select Items to Order
+                    </div>
+                    <div class="card-body itemDetailsInputs">
+                        <div id="searchItemId">
+                            <label for="itemIdSelector" class="form-label">Item Code *</label>
+                            <select class="form-select form-select-sm" id="itemIdSelector" aria-label="Small select example">
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemCode" class="form-label">Item Code</label>
+                            <input type="text" class="form-control" id="itemCode" placeholder="Item Code">
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="itemName" placeholder="Item Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemPrice" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="itemPrice" placeholder="Item Unit Price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemQty" class="form-label">Qty</label>
+                            <input type="text" class="form-control" id="itemQty" placeholder="Item Qty On Hand">
+                        </div>
+                        <div class="mb-3" id="order-qty-div">
+                            <label for="orderQty" class="form-label">Order Quantity *</label>
+                            <input type="text" class="form-control" id="orderQty" placeholder="Order Quantity">
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-danger" id="btnAddToCart" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add Items to a temporary collection"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Order Price summery div-->
+                <div class="card ">
+                    <div class="card-header" id="OrderPriceCardTitle">
+                        Total Price
+                    </div>
+                    <div class="card-body orderSummery">
+                        <div id="totalPriceDiv">
+                            <h2 id="totalPrice">Total : </h2>
+                        </div>
+                        <div id="subTotalPriceDiv">
+                            <h2 id="subTotalPrice">Sub Total : </h2>
+                        </div>
+                        <div id="balanceAmountDiv">
+                            <h2 id="balancePrice">Balance : </h2>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerPayingAmount" class="form-label">Cash</label>
+                            <input type="text" class="form-control" id="customerPayingAmount" placeholder="Cash Amount">
+                        </div>
+                        <div class="mb-3">
+                            <label for="discount" class="form-label">Discount %</label>
+                            <input type="number" class="form-control" id="discount" placeholder="Discount Amount">
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-success" id="btnPlaceOrder"><i class="fa-regular fa-circle-check"></i> Place Order</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Order details table-->
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr class="table-info">
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody id="order-tbl-tbody">
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
-</section>
-
 <script src="Assests/lib/jquery-3.7.1.min.js"></script>
 <script type="module" src="Controller/Customer.js"></script>
-    <script type="module" src="Controller/Item.js">
+    <script type="module" src="Controller/Item.js"></script>
+        <script type="module" src="Controller/PlaceOrder.js"></script>
 
-// <!--    customer -->
-//     var customers=[];
-//     var recordIndex;
-//    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-//        {
-//            display:'none'
-//        }
-//    )
-//    $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-//        {
-//            display:'none'
-//        }
-//    )
-// $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
-//     {
-//         display:'none'
-//     }
-// )
-//
-//    $('#Customer-manage').on('click', () =>{
-//        $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-//            {
-//                display:'block'
-//            }
-//        )
-//
-//        $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-//            {
-//                display:'none'
-//            }
-//        )
-//        $('#s11,#s22,#h44,#d2,#d3').css(
-//            {
-//                display:'none'
-//            }
-//        )
-//        $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
-//            {
-//                display:'none'
-//            }
-//        )
-//    });
-//
-//    $('#Item-manage').on('click', () =>{
-//        $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-//            {
-//                display:'none'
-//            }
-//        )
-//
-//        $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-//            {
-//                display:'block'
-//            }
-//        )
-//        $('#s11,#s22,#h44,#d2,#d3').css(
-//            {
-//                display:'none'
-//            }
-//        )
-//        $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
-//            {
-//                display:'none'
-//            }
-//        )
-//    });
-// $('#Home-mange').on('click', () =>{
-//     $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-//         {
-//             display:'none'
-//         }
-//     )
-//
-//     $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-//         {
-//             display:'none'
-//         }
-//     )
-//     $('#s11,#s22,#h44,#d2,#d3').css(
-//         {
-//             display:'block'
-//         }
-//     )
-//     $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
-//         {
-//             display:'none'
-//         }
-//     )
-// });
-// $('#order-manage').on('click', () =>{
-//     $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-//         {
-//             display:'none'
-//         }
-//     )
-//
-//     $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-//         {
-//             display:'none'
-//         }
-//     )
-//     $('#s11,#s22,#h44,#d2,#d3').css(
-//         {
-//             display:'none'
-//         }
-//     )
-//     $('#s111,#s222,#h444,#h33,#b111,#s333,#s4,#h22').css(
-//         {
-//             display:'block'
-//         }
-//     )
-// });
-//
-//
-// //    crud Add
-//     function loadTable() {
-//         $('#Customer-detail').empty();
-//         customers.map((item, index) => {
-//             var record = ` <tr>
-//          <td class="cid">${item.id}</td>
-//          <td class="cname"> ${item.Name}</td>
-//          <td class="caddress">${item.Address}</td>
-//         <td class="ctel">${item.Tel}</td>
-//
-//          </tr>`
-//             $('#Customer-detail').append(record);
-//
-//         });
-//
-//     }
-//
-//    $('#save').on('click' , ()=>{
-//        let val1 = $('#Nic').val();
-//        let val2 = $('#Name').val();
-//        let val3 = $('#Address').val();
-//        let val4 = $('#Tel').val();
-//
-//        console.log(val1,val2,val3,val4)
-//
-//        // // create object
-//        let customer ={
-//            id: val1,
-//            Name:val2,
-//            Address:val3,
-//            Tel:val4,
-//        }
-//        // // push to the array
-//        customers.push(customer);
-//        loadTable();
-//
-//
-//        // $('#SID').val("");
-//        // $('#fname').val("");
-//        // $('#Lname').val("");
-//        // $('#address').val("");
-//
-//    })
-//
-//     $("#Delete").on('click', () => {
-//         customers.splice(recordIndex, 1);
-//         loadTable();
-//
-//     });
-//
-//     $('#Customer-detail').on('click','tr',function (){
-//         let index = $(this).index();
-//         recordIndex=index;
-//         var id = $(this).find(".cid").text();
-//         var name = $(this).find(".cname").text();
-//         var address = $(this).find(".caddress").text();
-//         var tel = $(this).find(".ctel").text();
-//
-//
-//         console.log(id+ " "+name+" "+address+" "+tel+" ");
-//         $('#CID').val(id);
-//         $('#Cname').val(name);
-//         $('#Caddress').val(address);
-//         $('#Ctel').val(tel);
-//
-//     });
-//     $('#Update').on('click' , ()=> {
-//
-//         let val1 = $('#CID').val();
-//         let val2 = $('#Cname').val();
-//         let val3 = $('#Caddress').val();
-//         let val4 = $('#Ctel').val();
-//
-//         let customerObj=customers[recordIndex];
-//         customerObj.id=val1;
-//         customerObj.Name=val2;
-//         customerObj.Address=val3;
-//         customerObj.Tel=val4;
-//
-//         console.log("S1: ", customerObj);
-//         console.log("S2: ", customers[recordIndex]);
-//
-//         loadTable();
-//
-//     });
-//
-//
-// var items=[]
-//
-//
-// //     Item crud
-// $('#item-save').on('click' , ()=>{
-//     let code = $('#code1').val();
-//     let desc = $('#desc1').val();
-//     let unitPrice = $('#price1').val();
-//     let qty = $('#qty1').val();
-//
-//     console.log(code,desc,unitPrice,qty)
-//
-//
-//     // // create object
-//     let item ={
-//         code: code,
-//         desc:desc,
-//         unitPrice:unitPrice,
-//         qty:qty,
-//     }
-//     // // push to the array
-//     items.push(item);
-//     loadItemTable();
-//
-//
-//     // $('#SID').val("");
-//     // $('#fname').val("");
-//     // $('#Lname').val("");
-//     // $('#address').val("");
-//
-// })
-// function loadItemTable() {
-//     $('#item-details').empty();
-//     items.map((item, index) => {
-//         var record = ` <tr>
-//          <td class="code">${item.code}</td>
-//          <td class="description"> ${item.desc}</td>
-//          <td class="unitprice">${item.unitPrice}</td>
-//         <td class="qty">${item.qty}</td>
-//
-//          </tr>`
-//         $('#item-details').append(record);
-//
-//
-//     });
-// }
-// $('#item-details').on('click','tr',function (){
-//     let index = $(this).index();
-//     recordIndex=index;
-//     var code = $(this).find(".code").text();
-//     var desc = $(this).find(".description").text();
-//     var price = $(this).find(".unitprice").text();
-//     var qty = $(this).find(".qty").text();
-//
-//
-//     console.log(code+ " "+desc+" "+price+" "+qty+" ");
-//     $('#Code').val(code);
-//     $('#Desc').val(desc);
-//     $('#Price').val(price);
-//     $('#Qty').val(qty);
-//
-// });
-// loadItemTable();
-//
-// $("#item-delete").on('click', () => {
-//     items.splice(recordIndex, 1);
-//     loadItemTable();
-//
-// });
-// $('#item-update').on('click' , ()=> {
-//
-//     let val1 = $('#Code').val();
-//     let val2 = $('#Desc').val();
-//     let val3 = $('#Price').val();
-//     let val4 = $('#Qty').val();
-//
-//     let itemObj=items[recordIndex];
-//     itemObj.code=val1;
-//     itemObj.desc=val2;
-//     itemObj.price=val3;
-//     itemObj.qty=val4;
-//
-//     console.log("S1: ", itemObj);
-//     console.log("S2: ", items[recordIndex]);
-//
-//     loadItemTable();
-//
-// });
 
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
