@@ -890,6 +890,30 @@
         </div>
     </div>
 </section>
+<div class="modal" tabindex="-1" id="place-order-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Place Your Order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Confirm your Action to Place your Order</h6><br>
+                <p>Customer Name : <span id="orderCustomerNameSpan"></span></p>
+                <p>Item Count : <span id="orderItemCountSpan"></span></p>&nbsp;&nbsp;
+                <p>Total Amount : <span id="totalAmountSpan"></span></p>
+                <p>Cash Amount : <span id="cashAmountSpan"></span></p>
+                <p>Discount Amount : <span id="discountPercentageSpan"></span></p>
+                <p>Balance : <span id="balanceAmountSpan"></span></p>
+            </div>
+            <div class="modal-footer">
+<!--                <img src="assets/images/posware_logo.png" alt="Bootstrap" width="150" height="24">-->
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Close</button>
+                <button type="button" class="btn btn-primary" id="btnConfirmPlaceOrder"><i class="fa-regular fa-circle-check"></i> Place order</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="Assests/lib/jquery-3.7.1.min.js"></script>
 <script type="module" src="Controller/Customer.js"></script>
     <script type="module" src="Controller/Item.js"></script>

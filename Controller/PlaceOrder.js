@@ -72,12 +72,12 @@ function loadCartItems() {
     $.each(cartItemsArr, function(index, item) {
         var row = `<tr>
             <td id="item-code-tbl">${item.code}</td>
-            <td id="item-name-tbl">${item.itemName}</td>
-            <td id="item-price-tbl">${item.itemPrice}</td>
+            <td id="item-name-tbl">${item.Name}</td>
+            <td id="item-price-tbl">${item.unitPrice}</td>
             <td id="order-qty-tbl">${item.orderQty}</td>
             <td id="total-tbl">${item.total}</td>
             <td>
-                <button class="btn btn-danger cart-remove" data-id="${item.itemId}">Remove</button>
+                <button class="btn btn-danger cart-remove" data-id="${item.code}">Remove</button>
                <!-- <button class="btn btn-secondary reduce-amount" data-bs-toggle="modal"  data-bs-target="#order-items-modal">Reduce Qty</button>-->
             </td>
         </tr>`;
@@ -88,66 +88,70 @@ $('tbody').on('click', '.cart-remove', function() {
     var itemId = $(this).data('id');
     let removingRequestedItem = cartItemsArr.find(s=>s.code===itemId);
     if(removingRequestedItem){
-        let currentItemQty = parseInt(itemArr.find(s=>s.code===itemId).qty);
+        let currentItemQty = parseInt(items.find(s=>s.code===itemId).qty);
         let updatedItemQty = currentItemQty+parseInt(removingRequestedItem.orderQty);
-        itemArr.find(s=>s.code===itemId).qtyOnHand=updatedItemQty;
+        items.find(s=>s.code===itemId).qtyOnHand=updatedItemQty;
         totalPrice-=removingRequestedItem.total;
         $('#totalPrice').text("Total : Rs."+totalPrice);
     }
     cartItemsArr.find(s=>s.code===itemId).total=0;
-    cartItemsArr = cartItemsArr.filter(s => s.itemId !== itemId);
+    cartItemsArr = cartItemsArr.filter(s => s.code !== itemId);
     loadCartItems();
-    clearItemFields();
+    clearItemFields(); Swal.fire({
+            title: "OOPS",
+            text: "No Customer Found",
+            icon: "error"
+        });
 })
 $('#btnAddToCart').on('click',(e)=>{
     if(!$('#orderQty').val()||$('#orderQty').val()===0){
-        Swal.fire({
-            title: "OOPS!",
-            text: "Order Quantity cannot be 0",
-            icon: "warning"
-        });
+        // Swal.fire({
+        //     title: "OOPS!",
+        //     text: "Order Quantity cannot be 0",
+        //     icon: "warning"
+        // });
         return;
     }else if(!$('#itemCode').val()){
-        Swal.fire({
-            title: "OOPS!",
-            text: "Item Code cannot be empty",
-            icon: "warning"
-        });
+        // Swal.fire({
+        //     title: "OOPS!",
+        //     text: "Item Code cannot be empty",
+        //     icon: "warning"
+        // });
         return;
     }else if($('#itemQty').val()<$('#orderQty').val()){
-        Swal.fire({
-            title: "OOPS!",
-            text: "Order Quantity cannot be greater than Item Quantity",
-            icon: "warning"
-        });
+        // Swal.fire({
+        //     title: "OOPS!",
+        //     text: "Order Quantity cannot be greater than Item Quantity",
+        //     icon: "warning"
+        // });
         return;
     }
     let totalForCurrentItem=($('#itemPrice').val()*$('#orderQty').val());
     try{
         if(cartItemsArr.find(s => s.itemId === $('#itemCode').val())) {
-            let indexOfItem = cartItemsArr.findIndex(s => s.itemId === $('#itemCode').val());
+            let indexOfItem = cartItemsArr.findIndex(s => s.code === $('#itemCode').val());
             cartItemsArr[indexOfItem].orderQty=parseInt($('#orderQty').val())+parseInt(cartItemsArr[indexOfItem].orderQty);
             cartItemsArr[indexOfItem].total+=totalForCurrentItem;
             loadCartItems();
         }else{
             cartItemsArr.push({
-                itemId: $('#itemCode').val(),
-                itemName: $('#itemName').val(),
-                itemPrice: $('#itemPrice').val(),
+                code: $('#itemCode').val(),
+                Name: $('#itemName').val(),
+                unitPrice: $('#itemPrice').val(),
                 orderQty: $('#orderQty').val(),
                 total: totalForCurrentItem
             });
         }
-        let indexOfItem = items.find(s => s.itemId === $('#itemCode').val());
+        let indexOfItem = items.find(s => s.code === $('#itemCode').val());
         console.log("Index of Item : ",indexOfItem)
-        indexOfItem.qtyOnHand-=parseInt($('#orderQty').val());
+        indexOfItem.qty-=parseInt($('#orderQty').val());
         clearItemFields();
     }catch (error){
-        Swal.fire({
-            title: "Something went wrong",
-            text: "Adding Item Failed..",
-            icon: "error"
-        });
+        // Swal.fire({
+        //     title: "Something went wrong",
+        //     text: "Adding Item Failed..",
+        //     icon: "error"
+        // });
         console.log("Adding Item Failed..",error)
     }
     console.log(cartItemsArr);
@@ -181,11 +185,11 @@ $('#discount').on('click',()=>{
         discountPercentage = $('#discount').val();
 
         if (payingAmount < totalPrice || isNaN(payingAmount)) {
-            Swal.fire({
-                title: "OOPS.!",
-                text: "Invalid Amount, Check and Try Again",
-                icon: "warning"
-            });
+            // Swal.fire({
+            //     title: "OOPS.!",
+            //     text: "Invalid Amount, Check and Try Again",
+            //     icon: "warning"
+            // });
             /*alert("Invalid Amount, Check and Try Again");*/
             return;
         }
@@ -203,21 +207,21 @@ $('#discount').on('click',()=>{
     }
 });
 $('#btnPlaceOrder').on('click',()=>{
-    if(cartItemsArr.length===0){
-        Swal.fire({
-            title: "OOPS.!",
-            text: "Cart is Empty,Couldn't Place Order",
-            icon: "warning"
-        });
-        return;
-    }else if(!$('#customerPayingAmount').val()){
-        Swal.fire({
-            title: "OOPS.!",
-            text: "Paying Amount cannot be empty",
-            icon: "warning"
-        });
-        return;
-    }
+    // if(cartItemsArr.length===0){
+    //     // Swal.fire({
+    //     //     title: "OOPS.!",
+    //     //     text: "Cart is Empty,Couldn't Place Order",
+    //     //     icon: "warning"
+    //     // });
+    //     return;
+    // }else if(!$('#customerPayingAmount').val()){
+    //     // Swal.fire({
+    //     //     title: "OOPS.!",
+    //     //     text: "Paying Amount cannot be empty",
+    //     //     icon: "warning"
+    //     // });
+    //     return;
+    // }
 
     $('#place-order-modal').modal('show');
     $('#orderCustomerNameSpan').text($('#selectedCustomerNamePlaceOrder').val());
