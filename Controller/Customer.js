@@ -53,6 +53,14 @@ function validateInputs(val1, val2, val3, val4) {
         alert('All fields are required');
         return false;
     }
+    if (isNaN(val4) ) {
+        alert('Contact Number must be numbers');
+        return false;
+    }
+    if (!/^\d{10}$/.test(val4) ){
+        alert("Invalid telephone number. It should be 10 digits.");
+        return false;
+    }
     return true;
 }
 
