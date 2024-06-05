@@ -1,89 +1,115 @@
-import {items} from "../db/CustomerDb.js";
-
-import {ItemModel} from "../model/ItemModel.js";
+import { items } from "../db/CustomerDb.js";
+import { ItemModel } from "../model/ItemModel.js";
 
 var recordIndex;
-$('#item-save').on('click' , ()=>{
+
+// Add item
+$('#item-save').on('click', () => {
     let code = $('#code1').val();
     let desc = $('#desc1').val();
     let unitPrice = $('#price1').val();
     let qty = $('#qty1').val();
 
-    console.log(code,desc,unitPrice,qty)
-    let item1 = new ItemModel(code,desc,unitPrice,qty);
+    if (!validateItemInputs(code, desc, unitPrice, qty)) return;
 
-    // // create object
-    // let item ={
-    //     code: code,
-    //     desc:desc,
-    //     unitPrice:unitPrice,
-    //     qty:qty,
-    // }
-    // // push to the array
+    console.log(code, desc, unitPrice, qty);
+    let item1 = new ItemModel(code, desc, unitPrice, qty);
+
     items.push(item1);
     loadItemTable();
+    clearItemInputs();
+});
 
+// Validate form inputs
+function validateItemInputs(code, desc, unitPrice, qty) {
+    if (!code || !desc || !unitPrice || !qty) {
+        alert('All fields are required');
+        return false;
+    }
+    if (isNaN(unitPrice) || isNaN(qty)) {
+        alert('Unit Price and Quantity must be numbers');
+        return false;
+    }
+    return true;
+}
 
-    // $('#SID').val("");
-    // $('#fname').val("");
-    // $('#Lname').val("");
-    // $('#address').val("");
-
-})
+// Load table with item data
 function loadItemTable() {
     $('#item-details').empty();
-    items.map((item, index) => {
-        var record = ` <tr>
-         <td class="code">${item.code}</td>
-         <td class="description"> ${item.desc}</td>
-         <td class="unitprice">${item.unitPrice}</td>
-        <td class="qty">${item.qty}</td>
-
-         </tr>`
+    items.forEach((item, index) => {
+        var record = `
+            <tr>
+                <td class="code">${item.code}</td>
+                <td class="description">${item.desc}</td>
+                <td class="unitprice">${item.unitPrice}</td>
+                <td class="qty">${item.qty}</td>
+            </tr>`;
         $('#item-details').append(record);
-
-
     });
 }
-$('#item-details').on('click','tr',function (){
+
+// Clear form inputs
+function clearItemInputs() {
+    $('#code1').val('');
+    $('#desc1').val('');
+    $('#price1').val('');
+    $('#qty1').val('');
+}
+
+// Handle row click for editing
+$('#item-details').on('click', 'tr', function () {
     let index = $(this).index();
-    recordIndex=index;
+    recordIndex = index;
     var code = $(this).find(".code").text();
     var desc = $(this).find(".description").text();
-    var price = $(this).find(".unitprice").text();
+    var unitPrice = $(this).find(".unitprice").text();
     var qty = $(this).find(".qty").text();
 
-
-    console.log(code+ " "+desc+" "+price+" "+qty+" ");
+    console.log(code + " " + desc + " " + unitPrice + " " + qty);
     $('#Code').val(code);
     $('#Desc').val(desc);
-    $('#Price').val(price);
+    $('#Price').val(unitPrice);
     $('#Qty').val(qty);
-
 });
-loadItemTable();
 
+// Delete item
 $("#item-delete").on('click', () => {
+    if (recordIndex == null) {
+        alert('Please select an item to delete');
+        return;
+    }
     items.splice(recordIndex, 1);
+    recordIndex = null;
     loadItemTable();
-
+    clearItemInputs();
 });
-$('#item-update').on('click' , ()=> {
 
-    let val1 = $('#Code').val();
-    let val2 = $('#Desc').val();
-    let val3 = $('#Price').val();
-    let val4 = $('#Qty').val();
+// Update item
+$('#item-update').on('click', () => {
+    if (recordIndex == null) {
+        alert('Please select an item to update');
+        return;
+    }
 
-    let itemObj=items[recordIndex];
-    itemObj.code=val1;
-    itemObj.desc=val2;
-    itemObj.price=val3;
-    itemObj.qty=val4;
+    let code = $('#Code').val();
+    let desc = $('#Desc').val();
+    let unitPrice = $('#Price').val();
+    let qty = $('#Qty').val();
+
+    if (!validateItemInputs(code, desc, unitPrice, qty)) return;
+
+    let itemObj = items[recordIndex];
+    itemObj.code = code;
+    itemObj.desc = desc;
+    itemObj.unitPrice = unitPrice;
+    itemObj.qty = qty;
 
     console.log("S1: ", itemObj);
     console.log("S2: ", items[recordIndex]);
 
     loadItemTable();
-
+    clearItemInputs();
 });
+
+// Initial load of the item table
+loadItemTable();

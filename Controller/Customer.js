@@ -1,194 +1,126 @@
-<!--    customer -->
-import {customers} from "../db/CustomerDb.js";
 
-import {customer} from "../model/CustomerModel.js";
+import { customers } from "../db/CustomerDb.js";
+import { customer } from "../model/CustomerModel.js";
 
-// var customers=[];
 var recordIndex;
-$('#s1,#s2,#s5,#h2,#b1,#s3').css(
-    {
-        display:'none'
-    }
-)
-$('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-    {
-        display:'none'
-    }
-)
-$('#place-order-section').css(
-    {
-        display:'none'
-    }
-)
 
-$('#Customer-manage').on('click', () =>{
-    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-        {
-            display:'block'
-        }
-    )
+// Hide sections initially
+$('#s1,#s2,#s5,#h2,#b1,#s3').css({ display: 'none' });
+$('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css({ display: 'none' });
+$('#place-order-section').css({ display: 'none' });
 
-    $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-        {
-            display:'none'
-        }
-    )
-    $('#s11,#s22,#h44,#d2,#d3').css(
-        {
-            display:'none'
-        }
-    )
-    $('#place-order-section').css(
-        {
-            display:'none'
-        }
-    )
+// Handle button clicks to manage visibility
+$('#Customer-manage').on('click', () => {
+    toggleSections(['#s1', '#s2', '#s5', '#h2', '#b1', '#s3'], ['#s01', '#s02', '#s05', '#h3', '#b01', '#s03', '#s06', '#s11', '#s22', '#h44', '#d2', '#d3', '#place-order-section']);
 });
 
-$('#Item-manage').on('click', () =>{
-    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-        {
-            display:'none'
-        }
-    )
-
-    $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-        {
-            display:'block'
-        }
-    )
-    $('#s11,#s22,#h44,#d2,#d3').css(
-        {
-            display:'none'
-        }
-    )
-    $('#place-order-section').css(
-        {
-            display:'none'
-        }
-    )
-});
-$('#Home-mange').on('click', () =>{
-    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-        {
-            display:'none'
-        }
-    )
-
-    $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-        {
-            display:'none'
-        }
-    )
-    $('#s11,#s22,#h44,#d2,#d3').css(
-        {
-            display:'block'
-        }
-    )
-    $('#place-order-section').css(
-        {
-            display:'none'
-        }
-    )
-});
-$('#order-manage').on('click', () =>{
-    $('#s1,#s2,#s5,#h2,#b1,#s3').css(
-        {
-            display:'none'
-        }
-    )
-
-    $('#s01,#s02,#s05,#h3,#b01,#s03,#s06').css(
-        {
-            display:'none'
-        }
-    )
-    $('#s11,#s22,#h44,#d2,#d3').css(
-        {
-            display:'none'
-        }
-    )
-    $('#place-order-section').css(
-        {
-            display:'block'
-        }
-    )
+$('#Item-manage').on('click', () => {
+    toggleSections(['#s01', '#s02', '#s05', '#h3', '#b01', '#s03', '#s06'], ['#s1', '#s2', '#s5', '#h2', '#b1', '#s3', '#s11', '#s22', '#h44', '#d2', '#d3', '#place-order-section']);
 });
 
+$('#Home-mange').on('click', () => {
+    toggleSections(['#s11', '#s22', '#h44', '#d2', '#d3'], ['#s1', '#s2', '#s5', '#h2', '#b1', '#s3', '#s01', '#s02', '#s05', '#h3', '#b01', '#s03', '#s06', '#place-order-section']);
+});
 
-//    crud Add
-function loadTable() {
-    $('#Customer-detail').empty();
-    customers.map((item, index) => {
-        var record = ` <tr>
-         <td class="cid">${item.id}</td>
-         <td class="cname"> ${item.Name}</td>
-         <td class="caddress">${item.Address}</td>
-        <td class="ctel">${item.Tel}</td>
+$('#order-manage').on('click', () => {
+    toggleSections(['#place-order-section'], ['#s1', '#s2', '#s5', '#h2', '#b1', '#s3', '#s01', '#s02', '#s05', '#h3', '#b01', '#s03', '#s06', '#s11', '#s22', '#h44', '#d2', '#d3']);
+});
 
-         </tr>`
-        $('#Customer-detail').append(record);
-
-    });
-
+// Function to toggle sections
+function toggleSections(showSelectors, hideSelectors) {
+    showSelectors.forEach(selector => $(selector).css({ display: 'block' }));
+    hideSelectors.forEach(selector => $(selector).css({ display: 'none' }));
 }
 
-$('#save').on('click' , ()=>{
+// Load table with customer data
+function loadTable() {
+    $('#Customer-detail').empty();
+    customers.forEach((item, index) => {
+        var record = `
+            <tr>
+                <td class="cid">${item.id}</td>
+                <td class="cname">${item.Name}</td>
+                <td class="caddress">${item.Address}</td>
+                <td class="ctel">${item.Tel}</td>
+            </tr>`;
+        $('#Customer-detail').append(record);
+    });
+}
+
+// Validate form inputs
+function validateInputs(val1, val2, val3, val4) {
+    if (!val1 || !val2 || !val3 || !val4) {
+        alert('All fields are required');
+        return false;
+    }
+    return true;
+}
+
+// Add customer
+$('#save').on('click', () => {
     let val1 = $('#Nic').val();
     let val2 = $('#Name').val();
     let val3 = $('#Address').val();
     let val4 = $('#Tel').val();
 
-    console.log(val1,val2,val3,val4)
-    let customer1 = new customer(val1,val2,val3,val4);
+    if (!validateInputs(val1, val2, val3, val4)) return;
+
+    console.log(val1, val2, val3, val4);
+    let customer1 = new customer(val1, val2, val3, val4);
 
     customers.push(customer1);
     loadTable();
-
-
-})
-
-$("#Delete").on('click', () => {
-    customers.splice(recordIndex, 1);
-    loadTable();
-
 });
 
-$('#Customer-detail').on('click','tr',function (){
+// Delete customer
+$("#Delete").on('click', () => {
+    if (recordIndex == null) {
+        alert('Please select a customer to delete');
+        return;
+    }
+    customers.splice(recordIndex, 1);
+    recordIndex = null;
+    loadTable();
+});
+
+// Handle row click for editing
+$('#Customer-detail').on('click', 'tr', function () {
     let index = $(this).index();
-    recordIndex=index;
+    recordIndex = index;
     var id = $(this).find(".cid").text();
     var name = $(this).find(".cname").text();
     var address = $(this).find(".caddress").text();
     var tel = $(this).find(".ctel").text();
 
-
-    console.log(id+ " "+name+" "+address+" "+tel+" ");
+    console.log(id + " " + name + " " + address + " " + tel);
     $('#CID').val(id);
     $('#Cname').val(name);
     $('#Caddress').val(address);
     $('#Ctel').val(tel);
-
 });
-$('#Update').on('click' , ()=> {
+
+// Update customer
+$('#Update').on('click', () => {
+    if (recordIndex == null) {
+        alert('Please select a customer to update');
+        return;
+    }
 
     let val1 = $('#CID').val();
     let val2 = $('#Cname').val();
     let val3 = $('#Caddress').val();
     let val4 = $('#Ctel').val();
 
-    let customerObj=customers[recordIndex];
-    customerObj.id=val1;
-    customerObj.Name=val2;
-    customerObj.Address=val3;
-    customerObj.Tel=val4;
+    if (!validateInputs(val1, val2, val3, val4)) return;
+
+    let customerObj = customers[recordIndex];
+    customerObj.id = val1;
+    customerObj.Name = val2;
+    customerObj.Address = val3;
+    customerObj.Tel = val4;
 
     console.log("S1: ", customerObj);
     console.log("S2: ", customers[recordIndex]);
 
     loadTable();
-
 });
-
-
-
