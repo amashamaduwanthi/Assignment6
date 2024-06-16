@@ -425,11 +425,11 @@
     gap: 10px;
 }
 #searchInvoiceDetailsTitle,#placeOrderCardTitle,#OrderPriceCardTitle{
-    background: darkgray;
+    background: #693535;
     color: white;
 }
 #customerIdSelectorDiv,#searchItemId,#order-qty-div label{
-    color: red;
+    color: rgba(255, 166, 3, 0.53);
 }
 .invoiceDetailsInputs>div {
     margin-bottom: 15px;

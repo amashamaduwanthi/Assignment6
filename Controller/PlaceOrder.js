@@ -105,25 +105,25 @@ $('tbody').on('click', '.cart-remove', function() {
 })
 $('#btnAddToCart').on('click',(e)=>{
     if(!$('#orderQty').val()||$('#orderQty').val()===0){
-        // Swal.fire({
-        //     title: "OOPS!",
-        //     text: "Order Quantity cannot be 0",
-        //     icon: "warning"
-        // });
+        Swal.fire({
+            title: "OOPS!",
+            text: "Order Quantity cannot be 0",
+            icon: "warning"
+        });
         return;
     }else if(!$('#itemCode').val()){
-        // Swal.fire({
-        //     title: "OOPS!",
-        //     text: "Item Code cannot be empty",
-        //     icon: "warning"
-        // });
+        Swal.fire({
+            title: "OOPS!",
+            text: "Item Code cannot be empty",
+            icon: "warning"
+        });
         return;
     }else if($('#itemQty').val()<$('#orderQty').val()){
-        // Swal.fire({
-        //     title: "OOPS!",
-        //     text: "Order Quantity cannot be greater than Item Quantity",
-        //     icon: "warning"
-        // });
+        Swal.fire({
+            title: "OOPS!",
+            text: "Order Quantity cannot be greater than Item Quantity",
+            icon: "warning"
+        });
         return;
     }
     let totalForCurrentItem=($('#itemPrice').val()*$('#orderQty').val());
@@ -147,11 +147,11 @@ $('#btnAddToCart').on('click',(e)=>{
         indexOfItem.qty-=parseInt($('#orderQty').val());
         clearItemFields();
     }catch (error){
-        // Swal.fire({
-        //     title: "Something went wrong",
-        //     text: "Adding Item Failed..",
-        //     icon: "error"
-        // });
+        Swal.fire({
+            title: "Something went wrong",
+            text: "Adding Item Failed..",
+            icon: "error"
+        });
         console.log("Adding Item Failed..",error)
     }
     console.log(cartItemsArr);
@@ -185,11 +185,11 @@ $('#discount').on('click',()=>{
         discountPercentage = $('#discount').val();
 
         if (payingAmount < totalPrice || isNaN(payingAmount)) {
-            // Swal.fire({
-            //     title: "OOPS.!",
-            //     text: "Invalid Amount, Check and Try Again",
-            //     icon: "warning"
-            // });
+            Swal.fire({
+                title: "OOPS.!",
+                text: "Invalid Amount, Check and Try Again",
+                icon: "warning"
+            });
             /*alert("Invalid Amount, Check and Try Again");*/
             return;
         }
@@ -207,21 +207,21 @@ $('#discount').on('click',()=>{
     }
 });
 $('#btnPlaceOrder').on('click',()=>{
-    // if(cartItemsArr.length===0){
-    //     // Swal.fire({
-    //     //     title: "OOPS.!",
-    //     //     text: "Cart is Empty,Couldn't Place Order",
-    //     //     icon: "warning"
-    //     // });
-    //     return;
-    // }else if(!$('#customerPayingAmount').val()){
-    //     // Swal.fire({
-    //     //     title: "OOPS.!",
-    //     //     text: "Paying Amount cannot be empty",
-    //     //     icon: "warning"
-    //     // });
-    //     return;
-    // }
+    if(cartItemsArr.length===0){
+        // Swal.fire({
+        //     title: "OOPS.!",
+        //     text: "Cart is Empty,Couldn't Place Order",
+        //     icon: "warning"
+        // });
+        return;
+    }else if(!$('#customerPayingAmount').val()){
+        // Swal.fire({
+        //     title: "OOPS.!",
+        //     text: "Paying Amount cannot be empty",
+        //     icon: "warning"
+        // });
+        return;
+    }
 
     $('#place-order-modal').modal('show');
     $('#orderCustomerNameSpan').text($('#selectedCustomerNamePlaceOrder').val());
